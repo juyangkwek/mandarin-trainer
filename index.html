@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sugar &amp; Ethanol Mandarin Trainer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f1e9da;
+    --paper:#f9f4ea;
+    --ink:#221d16;
+    --ink-soft:#5a5042;
+    --line:#ddd0ba;
+    --amber:#a8531f;
+    --amber-soft:#c9772f;
+    /* tone colours (standard scheme) */
+    --t1:#c0392b; --t2:#1e8449; --t3:#2471a3; --t4:#7d3c98; --t5:#8a8073;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'IBM Plex Sans',sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(circle at 12% 8%, rgba(168,83,31,.06), transparent 45%),
+      radial-gradient(circle at 88% 92%, rgba(36,113,163,.05), transparent 45%);
+    min-height:100vh;
+    padding-bottom:110px;
+  }
+  .grain{position:fixed;inset:0;pointer-events:none;opacity:.4;z-index:0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.045'/%3E%3C/svg%3E");}
+  .wrap{max-width:980px;margin:0 auto;padding:0 18px;position:relative;z-index:1}
+
+  header{padding:34px 0 18px;border-bottom:1px solid var(--line)}
+  .kicker{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--amber);font-weight:600}
+  h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,6vw,46px);line-height:1.02;margin:8px 0 6px;letter-spacing:-.01em}
+  h1 em{font-style:italic;color:var(--amber)}
+  .sub{color:var(--ink-soft);font-size:14px;max-width:60ch}
+
+  /* controls */
+  .toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:18px 0 6px}
+  .seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--paper)}
+  .seg button{border:0;background:transparent;font-family:inherit;font-size:12.5px;color:var(--ink-soft);
+    padding:8px 14px;cursor:pointer;transition:.18s;font-weight:500}
+  .seg button.on{background:var(--ink);color:var(--paper)}
+  .search{flex:1;min-width:180px;display:flex;align-items:center;gap:8px;background:var(--paper);
+    border:1px solid var(--line);border-radius:999px;padding:8px 15px}
+  .search input{border:0;background:transparent;font-family:inherit;font-size:14px;color:var(--ink);width:100%;outline:none}
+  .search svg{flex:none;opacity:.5}
+
+  .tabs{display:flex;gap:4px;margin:16px 0 4px;flex-wrap:wrap}
+  .tab{font-family:'Fraunces',serif;font-size:16px;font-weight:500;color:var(--ink-soft);
+    background:none;border:0;cursor:pointer;padding:8px 4px 10px;position:relative;letter-spacing:.01em}
+  .tab .ct{font-family:'IBM Plex Sans';font-size:11px;background:var(--amber);color:#fff;border-radius:999px;
+    padding:1px 7px;margin-left:5px;vertical-align:middle;font-weight:600}
+  .tab.on{color:var(--ink)}
+  .tab.on::after{content:"";position:absolute;left:4px;right:4px;bottom:2px;height:2px;background:var(--amber)}
+
+  .chips{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 18px}
+  .chip{font-size:11.5px;font-weight:500;color:var(--ink-soft);background:var(--paper);border:1px solid var(--line);
+    border-radius:999px;padding:6px 12px;cursor:pointer;transition:.15s;white-space:nowrap}
+  .chip.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+  /* cards grid */
+  .cat-h{font-family:'Fraunces',serif;font-size:13px;letter-spacing:.04em;color:var(--amber);font-weight:600;
+    text-transform:uppercase;margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+  .cat-h::after{content:"";flex:1;height:1px;background:var(--line)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 16px 14px;
+    position:relative;transition:transform .15s,box-shadow .15s,border-color .15s;opacity:0;
+    animation:rise .5s forwards}
+  @keyframes rise{to{opacity:1;transform:translateY(0)}}
+  .card{transform:translateY(8px)}
+  .card:hover{box-shadow:0 8px 26px -14px rgba(34,29,22,.4);border-color:#cdbfa5}
+  .card.picked{border-color:var(--amber);box-shadow:0 0 0 1px var(--amber) inset}
+  .en{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;padding-right:46px}
+  .han{font-family:'Noto Serif SC',serif;font-size:31px;font-weight:700;line-height:1.1;margin:7px 0 3px}
+  .py{font-size:16.5px;font-weight:500;letter-spacing:.01em;margin-bottom:8px}
+  .py .s{transition:color .15s}
+  .note{font-size:12.5px;color:var(--ink-soft);line-height:1.45}
+
+  .star{position:absolute;top:12px;right:42px;width:26px;height:26px;border:0;background:none;cursor:pointer;
+    color:#c3b59c;transition:.15s;padding:0}
+  .star:hover{color:var(--amber)}
+  .star.on{color:var(--amber)}
+  .spk{position:absolute;top:12px;right:12px;width:26px;height:26px;border:0;background:none;cursor:pointer;
+    color:#b7a98f;transition:.15s;padding:0}
+  .spk:hover{color:var(--ink)}
+  .spk.speaking{color:var(--amber);animation:pulse .7s infinite}
+  @keyframes pulse{50%{opacity:.4}}
+
+  .empty{text-align:center;padding:60px 20px;color:var(--ink-soft)}
+  .empty .big{font-family:'Fraunces',serif;font-size:22px;color:var(--ink);margin-bottom:8px}
+  .empty button{margin-top:14px}
+
+  .btn{font-family:inherit;font-size:13px;font-weight:600;border-radius:999px;padding:11px 22px;cursor:pointer;
+    border:1px solid var(--ink);background:var(--ink);color:var(--paper);transition:.15s}
+  .btn:hover{background:#000}
+  .btn.ghost{background:transparent;color:var(--ink)}
+  .btn.ghost:hover{background:rgba(34,29,22,.06)}
+  .btn.amber{background:var(--amber);border-color:var(--amber)}
+  .btn.amber:hover{background:var(--amber-soft);border-color:var(--amber-soft)}
+
+  /* bottom bar */
+  .dock{position:fixed;left:0;right:0;bottom:0;z-index:5;background:rgba(249,244,234,.94);
+    backdrop-filter:blur(8px);border-top:1px solid var(--line)}
+  .dock-in{max-width:980px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .dock .count{font-family:'Fraunces',serif;font-size:15px}
+  .dock .count b{color:var(--amber)}
+  .dock .spacer{flex:1}
+  .legend{display:flex;gap:12px;font-size:11px;color:var(--ink-soft);flex-wrap:wrap}
+  .legend i{font-style:normal;font-weight:600}
+
+  /* study */
+  .study{padding:14px 0 0}
+  .study-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+  .progress{flex:1;min-width:120px;height:6px;background:var(--line);border-radius:999px;overflow:hidden}
+  .progress div{height:100%;background:var(--amber);width:0;transition:width .35s}
+  .flash{background:var(--paper);border:1px solid var(--line);border-radius:20px;min-height:330px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+    padding:34px 24px;cursor:pointer;position:relative;user-select:none;box-shadow:0 18px 50px -30px rgba(34,29,22,.5)}
+  .flash .tag{position:absolute;top:16px;left:18px;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
+  .flash .flip-hint{position:absolute;bottom:14px;font-size:11px;color:var(--ink-soft);opacity:.7}
+  .flash .q-en{font-family:'Fraunces',serif;font-size:30px;font-weight:600;letter-spacing:-.01em}
+  .flash .q-han{font-family:'Noto Serif SC',serif;font-size:66px;font-weight:700;line-height:1}
+  .a-han{font-family:'Noto Serif SC',serif;font-size:58px;font-weight:700;line-height:1.05}
+  .a-py{font-size:24px;font-weight:500;margin:10px 0 4px}
+  .a-en{font-family:'Fraunces',serif;font-size:22px;font-weight:600;margin-bottom:10px}
+  .a-note{font-size:13px;color:var(--ink-soft);max-width:46ch}
+  .a-spk{margin-top:14px}
+  .grade{display:flex;gap:12px;margin-top:18px}
+  .grade .btn{flex:1}
+  .done{text-align:center;padding:50px 16px}
+  .done h2{font-family:'Fraunces',serif;font-size:30px;margin-bottom:8px}
+  .done p{color:var(--ink-soft);margin-bottom:20px}
+
+  @media(max-width:520px){
+    .han{font-size:28px}.flash .q-han{font-size:54px}.a-han{font-size:48px}
+    .legend{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="wrap">
+  <header>
+    <div class="kicker">Sugar · Ethanol · Soft Commodities</div>
+    <h1>Mandarin for the <em>trading floor</em></h1>
+    <p class="sub">Build a shortlist of the terms you want to drill, then study just those. Tap any word to hear it. Pinyin is colour-coded by tone.</p>
+    <div class="toolbar">
+      <label class="search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input id="search" type="text" placeholder="Search English, characters or pinyin…">
+      </label>
+      <div class="seg" id="pyMode">
+        <button data-m="marks" class="on">tone marks</button>
+        <button data-m="numbers">tone numbers</button>
+      </div>
+      <div class="seg" id="colMode">
+        <button data-c="1" class="on">colour</button>
+        <button data-c="0">plain</button>
+      </div>
+    </div>
+    <div class="tabs">
+      <button class="tab on" data-v="browse">Browse</button>
+      <button class="tab" data-v="shortlist">My Shortlist <span class="ct" id="slCount">0</span></button>
+      <button class="tab" data-v="study">Study</button>
+    </div>
+  </header>
+
+  <main id="main"></main>
+</div>
+
+<div class="dock">
+  <div class="dock-in">
+    <div class="count">Shortlist: <b id="dockCount">0</b> <span id="dockWord">words</span></div>
+    <div class="spacer"></div>
+    <div class="legend">
+      <i style="color:var(--t1)">1 high</i><i style="color:var(--t2)">2 rising</i>
+      <i style="color:var(--t3)">3 dip</i><i style="color:var(--t4)">4 falling</i><i style="color:var(--t5)">· neutral</i>
+    </div>
+    <button class="btn ghost" id="clearBtn">Clear</button>
+    <button class="btn amber" id="studyBtn">Study shortlist →</button>
+  </div>
+</div>
+
+<script>
+/* ---------- DATA ----------
+   syl = array of tone-marked syllables; tone + numbered form are derived. */
+const VOCAB = [
+ // Trading & Finance
+ {id:1,en:"Futures",cn:"期货",syl:["qī","huò"],cat:"Trading & Finance",note:"Core term. Learn paired with 现货 (spot)."},
+ {id:2,en:"Spot / Cash business",cn:"现货",syl:["xiàn","huò"],cat:"Trading & Finance",note:"Physical. The direct opposite of 期货."},
+ {id:3,en:"Trading / Transaction",cn:"交易",syl:["jiāo","yì"],cat:"Trading & Finance",note:"The deal itself, vs 贸易 (trade flow)."},
+ {id:4,en:"Hedging",cn:"套保",syl:["tào","bǎo"],cat:"Trading & Finance",note:"Insider short form of 套期保值. Signals you trade."},
+ {id:5,en:"Front / Nearby month",cn:"近月合约",syl:["jìn","yuè","hé","yuē"],cat:"Trading & Finance",note:"合约 = the futures contract."},
+ {id:6,en:"Back / Deferred month",cn:"远月合约",syl:["yuǎn","yuè","hé","yuē"],cat:"Trading & Finance",note:"Opposite of 近月."},
+ {id:7,en:"Position",cn:"头寸",syl:["tóu","cùn"],cat:"Trading & Finance",note:"Trading/treasury position. 寸 = cùn, 4th tone."},
+ {id:8,en:"Asset",cn:"资产",syl:["zī","chǎn"],cat:"Trading & Finance",note:"产 chǎn is retroflex; keep the -n ending."},
+ {id:9,en:"Risk control",cn:"风控",syl:["fēng","kòng"],cat:"Trading & Finance",note:"Short for 风险控制. Your home turf - use it."},
+ {id:10,en:"Basis",cn:"基差",syl:["jī","chā"],cat:"Trading & Finance",note:"差 = chā, tone 1 (NOT chà). Credibility word."},
+ {id:11,en:"Premium",cn:"升水",syl:["shēng","shuǐ"],cat:"Trading & Finance",note:"Premium over reference. Also used in FX/spreads."},
+ {id:12,en:"Discount",cn:"贴水",syl:["tiē","shuǐ"],cat:"Trading & Finance",note:"贴 = tiē, tone 1 flat. Discount to reference."},
+ {id:13,en:"Basis trading",cn:"基差交易",syl:["jī","chā","jiāo","yì"],cat:"Trading & Finance",note:"Builds on 基差."},
+ {id:14,en:"Fixing the price",cn:"点价",syl:["diǎn","jià"],cat:"Trading & Finance",note:"Fixing flat price vs the futures reference. Sounds expert."},
+ {id:15,en:"Arbitrage",cn:"套利",syl:["tào","lì"],cat:"Trading & Finance",note:"Shares 套 with 套保 - drill the 2nd syllable."},
+ {id:16,en:"Soft commodities",cn:"软商品",syl:["ruǎn","shāng","pǐn"],cat:"Trading & Finance",note:"vs 大宗商品 (commodities, broad)."},
+ // Supply Chain & Logistics
+ {id:17,en:"Procurement / Sourcing",cn:"采购",syl:["cǎi","gòu"],cat:"Supply Chain & Logistics",note:"Buy-side; the function and the act."},
+ {id:18,en:"Demand",cn:"需求",syl:["xū","qiú"],cat:"Supply Chain & Logistics",note:"Pairs with 供应 (supply) and 消费."},
+ {id:19,en:"Consumption",cn:"消费",syl:["xiāo","fèi"],cat:"Supply Chain & Logistics",note:"End-use, distinct from 需求."},
+ {id:20,en:"Production / Output",cn:"产量",syl:["chǎn","liàng"],cat:"Supply Chain & Logistics",note:"产 chǎn (-n) vs 厂 chǎng (-ng). Don't merge."},
+ {id:21,en:"Trade",cn:"贸易",syl:["mào","yì"],cat:"Supply Chain & Logistics",note:"The trade-flow sense, vs 交易 (the deal)."},
+ {id:22,en:"Global trade",cn:"全球贸易",syl:["quán","qiú","mào","yì"],cat:"Supply Chain & Logistics",note:""},
+ {id:23,en:"Exclusive",cn:"独家",syl:["dú","jiā"],cat:"Supply Chain & Logistics",note:""},
+ {id:24,en:"Exclusive agency",cn:"独家代理",syl:["dú","jiā","dài","lǐ"],cat:"Supply Chain & Logistics",note:"Distribution / agency talks."},
+ {id:25,en:"Contract",cn:"合同",syl:["hé","tong"],cat:"Supply Chain & Logistics",note:"同 is neutral tone. Commercial contract; 合约 = futures."},
+ {id:26,en:"Execution / Operations",cn:"执行",syl:["zhí","xíng"],cat:"Supply Chain & Logistics",note:"执 is retroflex zhí, not 'zi'."},
+ {id:27,en:"Commodities (bulk)",cn:"大宗商品",syl:["dà","zōng","shāng","pǐn"],cat:"Supply Chain & Logistics",note:"Umbrella term for bulk commodities."},
+ // Agriculture, Sugar & Bioenergy
+ {id:28,en:"Agriculture",cn:"农业",syl:["nóng","yè"],cat:"Agriculture, Sugar & Bioenergy",note:""},
+ {id:29,en:"Acreage / Planted area",cn:"种植面积",syl:["zhòng","zhí","miàn","jī"],cat:"Agriculture, Sugar & Bioenergy",note:"Key for S&D conversations."},
+ {id:30,en:"S&D balance sheet",cn:"供需平衡表",syl:["gōng","xū","píng","héng","biǎo"],cat:"Agriculture, Sugar & Bioenergy",note:"供需 = supply-demand. Sounds analytically serious."},
+ {id:31,en:"Bioenergy",cn:"生物能源",syl:["shēng","wù","néng","yuán"],cat:"Agriculture, Sugar & Bioenergy",note:""},
+ {id:32,en:"Ethanol",cn:"乙醇",syl:["yǐ","chún"],cat:"Agriculture, Sugar & Bioenergy",note:"Technical/correct term. 酒精 (jiǔjīng) is colloquial 'alcohol'."},
+ {id:33,en:"Fuel ethanol",cn:"燃料乙醇",syl:["rán","liào","yǐ","chún"],cat:"Agriculture, Sugar & Bioenergy",note:"Always 乙醇 here, never 酒精."},
+ {id:34,en:"Anhydrous ethanol",cn:"无水乙醇",syl:["wú","shuǐ","yǐ","chún"],cat:"Agriculture, Sugar & Bioenergy",note:"无水 = anhydrous. Brazil / fuel context."},
+ {id:35,en:"Hydrous ethanol",cn:"含水乙醇",syl:["hán","shuǐ","yǐ","chún"],cat:"Agriculture, Sugar & Bioenergy",note:"含水 = hydrous."},
+ {id:36,en:"Refinery",cn:"精炼厂",syl:["jīng","liàn","chǎng"],cat:"Agriculture, Sugar & Bioenergy",note:"Sugar refinery. 厂 = chǎng (-ng)."},
+ {id:37,en:"Refined sugar",cn:"精制糖",syl:["jīng","zhì","táng"],cat:"Agriculture, Sugar & Bioenergy",note:"vs 原糖 (raw)."},
+ {id:38,en:"Raw sugar",cn:"原糖",syl:["yuán","táng"],cat:"Agriculture, Sugar & Bioenergy",note:"Your core product word."},
+ {id:39,en:"White sugar",cn:"白糖",syl:["bái","táng"],cat:"Agriculture, Sugar & Bioenergy",note:"Common in China domestic S&D talk."},
+ {id:40,en:"Sugar mill / factory",cn:"糖厂",syl:["táng","chǎng"],cat:"Agriculture, Sugar & Bioenergy",note:""},
+ {id:41,en:"Distillery / Ethanol plant",cn:"乙醇厂",syl:["yǐ","chún","chǎng"],cat:"Agriculture, Sugar & Bioenergy",note:"乙醇厂 modern/technical; 酒精厂 traditional."},
+ {id:42,en:"Industrial users",cn:"工业用户",syl:["gōng","yè","yòng","hù"],cat:"Agriculture, Sugar & Bioenergy",note:"Your B2B demand side."},
+ {id:43,en:"Sales",cn:"销售",syl:["xiāo","shòu"],cat:"Agriculture, Sugar & Bioenergy",note:"售 = retroflex shòu. Classic Singaporean error word."},
+ {id:44,en:"By-product",cn:"副产品",syl:["fù","chǎn","pǐn"],cat:"Agriculture, Sugar & Bioenergy",note:""},
+ {id:45,en:"Molasses",cn:"糖蜜",syl:["táng","mì"],cat:"Agriculture, Sugar & Bioenergy",note:""},
+ {id:46,en:"Bagasse",cn:"甘蔗渣",syl:["gān","zhè","zhā"],cat:"Agriculture, Sugar & Bioenergy",note:"甘蔗 = cane, 渣 = residue. Signals real mill knowledge."},
+ {id:47,en:"Processing margin",cn:"加工利润",syl:["jiā","gōng","lì","rùn"],cat:"Agriculture, Sugar & Bioenergy",note:"General processing margin."},
+ {id:48,en:"Crush margin",cn:"压榨利润",syl:["yā","zhà","lì","rùn"],cat:"Agriculture, Sugar & Bioenergy",note:"Cane-crush economics. Say it and you sound like an operator."},
+ // Corporate & Strategy
+ {id:49,en:"CEO / President",cn:"总裁",syl:["zǒng","cái"],cat:"Corporate & Strategy",note:"Group/President level. 裁 = cái, not zāi."},
+ {id:50,en:"General Manager",cn:"总经理",syl:["zǒng","jīng","lǐ"],cat:"Corporate & Strategy",note:"Runs a unit. Maps below 总裁 in seniority."},
+ {id:51,en:"Team",cn:"团队",syl:["tuán","duì"],cat:"Corporate & Strategy",note:""},
+ {id:52,en:"Trader",cn:"交易员",syl:["jiāo","yì","yuán"],cat:"Corporate & Strategy",note:""},
+ {id:53,en:"Researcher / Analyst",cn:"研究员",syl:["yán","jiū","yuán"],cat:"Corporate & Strategy",note:"Your S&D / research people."},
+ {id:54,en:"Partner",cn:"合作伙伴",syl:["hé","zuò","huǒ","bàn"],cat:"Corporate & Strategy",note:"The partner (a who)."},
+ {id:55,en:"Partnership / relationship",cn:"合作关系",syl:["hé","zuò","guān","xì"],cat:"Corporate & Strategy",note:"The relationship (a what)."},
+ {id:56,en:"Strategic cooperation",cn:"战略合作",syl:["zhàn","lüè","hé","zuò"],cat:"Corporate & Strategy",note:"The relationship word SOEs want to hear. Mind the lüè."}
+];
+const CATS=["Trading & Finance","Supply Chain & Logistics","Agriculture, Sugar & Bioenergy","Corporate & Strategy"];
+
+/* ---------- TONE HELPERS ---------- */
+const ACC={ 'ā':['a',1],'á':['a',2],'ǎ':['a',3],'à':['a',4],
+  'ē':['e',1],'é':['e',2],'ě':['e',3],'è':['e',4],
+  'ī':['i',1],'í':['i',2],'ǐ':['i',3],'ì':['i',4],
+  'ō':['o',1],'ó':['o',2],'ǒ':['o',3],'ò':['o',4],
+  'ū':['u',1],'ú':['u',2],'ǔ':['u',3],'ù':['u',4],
+  'ǖ':['v',1],'ǘ':['v',2],'ǚ':['v',3],'ǜ':['v',4] };
+function toneOf(syl){ for(const ch of syl){ if(ACC[ch]) return ACC[ch][1]; } return 5; }
+function toNum(syl){ let tone=5,out=""; for(const ch of syl){ if(ACC[ch]){out+=ACC[ch][0]; if(ACC[ch][1]!==5)tone=ACC[ch][1];} else if(ch==='ü'){out+='v';} else out+=ch; } return out + (tone===5?'':tone); }
+
+/* ---------- STATE ---------- */
+let SL=new Set();                 // shortlist ids
+let settings={py:'marks',col:true};
+let view='browse';
+let memOnly=null;                 // category filter (null = all)
+let query='';
+const KEY_SL='mando:shortlist:v1', KEY_SET='mando:settings:v1';
+
+/* ---------- STORAGE (persists across sessions, with in-memory fallback) ---------- */
+async function loadState(){
+  try{ const r=await window.storage.get(KEY_SL); if(r&&r.value){SL=new Set(JSON.parse(r.value));} }catch(e){}
+  try{ const r=await window.storage.get(KEY_SET); if(r&&r.value){settings=Object.assign(settings,JSON.parse(r.value));} }catch(e){}
+}
+async function saveSL(){ try{ await window.storage.set(KEY_SL,JSON.stringify([...SL])); }catch(e){} }
+async function saveSet(){ try{ await window.storage.set(KEY_SET,JSON.stringify(settings)); }catch(e){} }
+
+/* ---------- SPEECH ---------- */
+function speak(text,btn){
+  try{
+    if(!('speechSynthesis'in window)) return;
+    speechSynthesis.cancel();
+    const u=new SpeechSynthesisUtterance(text);
+    u.lang='zh-CN'; u.rate=.82;
+    const vs=speechSynthesis.getVoices();
+    const v=vs.find(x=>/zh[-_]?CN/i.test(x.lang))||vs.find(x=>/^zh/i.test(x.lang));
+    if(v)u.voice=v;
+    if(btn){btn.classList.add('speaking'); u.onend=()=>btn.classList.remove('speaking'); u.onerror=()=>btn.classList.remove('speaking');}
+    speechSynthesis.speak(u);
+  }catch(e){}
+}
+if('speechSynthesis'in window){ speechSynthesis.getVoices(); speechSynthesis.onvoiceschanged=()=>speechSynthesis.getVoices(); }
+
+/* ---------- RENDER PINYIN ---------- */
+function pyHTML(syl){
+  return syl.map(s=>{
+    const t=toneOf(s); const disp=settings.py==='numbers'?toNum(s):s;
+    const color=settings.col?`color:var(--t${t})`:'';
+    return `<span class="s" style="${color}">${disp}</span>`;
+  }).join(settings.py==='numbers'?'':'\u200a');
+}
+function pyPlain(syl){ return syl.join(''); }
+
+/* ---------- ICONS ---------- */
+const ICON_SPK='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
+const star=on=>`<svg width="22" height="22" viewBox="0 0 24 24" fill="${on?'currentColor':'none'}" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="m12 3 2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8L6.3 19.6l1-6L3 9.4l6-.9z"/></svg>`;
+
+/* ---------- CARD ---------- */
+function cardHTML(v,i){
+  const picked=SL.has(v.id);
+  return `<div class="card ${picked?'picked':''}" style="animation-delay:${Math.min(i*22,400)}ms">
+    <button class="spk" title="Hear it" onclick="event.stopPropagation();speak('${v.cn}',this)">${ICON_SPK}</button>
+    <button class="star ${picked?'on':''}" title="Add to shortlist" onclick="event.stopPropagation();toggleSL(${v.id})">${star(picked)}</button>
+    <div class="en">${v.en}</div>
+    <div class="han">${v.cn}</div>
+    <div class="py">${settings.col||settings.py==='numbers'?pyHTML(v.syl):pyPlain(v.syl)}</div>
+    ${v.note?`<div class="note">${v.note}</div>`:''}
+  </div>`;
+}
+
+/* ---------- VIEWS ---------- */
+const main=document.getElementById('main');
+function matches(v){
+  if(memOnly&&v.cat!==memOnly) return false;
+  if(!query) return true;
+  const q=query.toLowerCase();
+  return v.en.toLowerCase().includes(q)||v.cn.includes(query)||
+         v.syl.join('').toLowerCase().includes(q)||v.syl.map(toNum).join('').includes(q);
+}
+function renderBrowse(){
+  const chips=`<div class="chips">
+    <span class="chip ${!memOnly?'on':''}" onclick="setCat(null)">All</span>
+    ${CATS.map(c=>`<span class="chip ${memOnly===c?'on':''}" onclick="setCat('${c.replace(/'/g,"\\'")}')">${c}</span>`).join('')}
+  </div>`;
+  let body='';
+  CATS.forEach(c=>{
+    if(memOnly&&memOnly!==c) return;
+    const items=VOCAB.filter(v=>v.cat===c&&matches(v));
+    if(!items.length) return;
+    body+=`<div class="cat-h">${c}</div><div class="grid">${items.map((v,i)=>cardHTML(v,i)).join('')}</div>`;
+  });
+  if(!body) body=`<div class="empty"><div class="big">No matches</div><div>Try a different search term.</div></div>`;
+  main.innerHTML=chips+body;
+}
+function renderShortlist(){
+  const items=VOCAB.filter(v=>SL.has(v.id)&&matches(v));
+  if(!SL.size){
+    main.innerHTML=`<div class="empty"><div class="big">Your shortlist is empty</div>
+      <div>Go to <b>Browse</b> and tap the ☆ on any word to add it here.<br>Build the set you actually want to drill, then study just those.</div>
+      <button class="btn" onclick="go('browse')">Browse vocabulary</button></div>`;
+    return;
+  }
+  const head=`<div class="cat-h">Your shortlist · ${SL.size} word${SL.size>1?'s':''}</div>`;
+  const grid=`<div class="grid">${items.map((v,i)=>cardHTML(v,i)).join('')}</div>`;
+  const cta=`<div style="text-align:center;margin:26px 0 6px"><button class="btn amber" onclick="startStudy()">Study these ${SL.size} →</button></div>`;
+  main.innerHTML=head+grid+cta;
+}
+
+/* ---------- STUDY ---------- */
+let session=null;
+function startStudy(){
+  const pool=[...SL];
+  if(!pool.length){ go('shortlist'); return; }
+  session={ queue:shuffle(pool.slice()), again:[], total:pool.length, done:0, dir:'en2cn', flipped:false };
+  view='study'; syncTabs(); renderStudy();
+}
+function shuffle(a){ for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; }
+function renderStudyEntry(){
+  // empty-state when entering Study tab directly
+  if(!SL.size){
+    main.innerHTML=`<div class="empty"><div class="big">Nothing to study yet</div>
+      <div>Add some words to your shortlist first.</div>
+      <button class="btn" onclick="go('browse')">Browse vocabulary</button></div>`;
+    return;
+  }
+  main.innerHTML=`<div class="empty"><div class="big">Ready when you are</div>
+    <div>${SL.size} word${SL.size>1?'s':''} in your shortlist.</div>
+    <div style="margin-top:8px;font-size:13px">Direction: cards show one side, tap to flip.</div>
+    <button class="btn amber" onclick="startStudy()">Start session →</button></div>`;
+}
+function renderStudy(){
+  if(!session){ renderStudyEntry(); return; }
+  if(!session.queue.length && !session.again.length){
+    main.innerHTML=`<div class="done"><h2>Session complete</h2>
+      <p>You worked through ${session.total} word${session.total>1?'s':''}. Repetition is the whole game - come back tomorrow.</p>
+      <button class="btn amber" onclick="startStudy()">Run it again</button>
+      <button class="btn ghost" onclick="go('browse')" style="margin-left:8px">Back to browse</button></div>`;
+    session=null; return;
+  }
+  if(!session.queue.length){ session.queue=shuffle(session.again); session.again=[]; }
+  const id=session.queue[0]; const v=VOCAB.find(x=>x.id===id);
+  const pct=Math.round((session.done/session.total)*100);
+  const front = session.dir==='en2cn'
+    ? `<div class="q-en">${v.en}</div>`
+    : `<div class="q-han">${v.cn}</div>`;
+  const back = `
+    <div class="a-han">${v.cn}</div>
+    <div class="a-py">${pyHTML(v.syl)}</div>
+    <div class="a-en">${v.en}</div>
+    ${v.note?`<div class="a-note">${v.note}</div>`:''}
+    <button class="btn ghost a-spk" onclick="event.stopPropagation();speak('${v.cn}',this)">${ICON_SPK}&nbsp; Hear it</button>`;
+  main.innerHTML=`<div class="study">
+    <div class="study-top">
+      <div class="progress"><div style="width:${pct}%"></div></div>
+      <div class="seg" id="dirMode">
+        <button data-d="en2cn" class="${session.dir==='en2cn'?'on':''}">EN → 中</button>
+        <button data-d="cn2en" class="${session.dir==='cn2en'?'on':''}">中 → EN</button>
+      </div>
+    </div>
+    <div class="flash" id="flash" onclick="flip()">
+      <div class="tag">${v.cat}</div>
+      <div id="face">${session.flipped?back:front}</div>
+      ${!session.flipped?'<div class="flip-hint">tap to reveal</div>':''}
+    </div>
+    ${session.flipped?`<div class="grade">
+      <button class="btn ghost" onclick="grade(false)">Again</button>
+      <button class="btn amber" onclick="grade(true)">Got it</button></div>`:''}
+  </div>`;
+  document.querySelectorAll('#dirMode button').forEach(b=>b.onclick=e=>{
+    e.stopPropagation(); session.dir=b.dataset.d; session.flipped=false; renderStudy();
+  });
+}
+function flip(){ if(session){ session.flipped=!session.flipped; renderStudy(); } }
+function grade(known){
+  if(!session) return;
+  const id=session.queue.shift();
+  if(known){ session.done++; } else { session.again.push(id); }
+  session.flipped=false; renderStudy();
+}
+
+/* ---------- ACTIONS ---------- */
+function toggleSL(id){ if(SL.has(id))SL.delete(id); else SL.add(id); saveSL(); refreshCounts(); rerender(); }
+function setCat(c){ memOnly=c; renderBrowse(); }
+function refreshCounts(){
+  document.getElementById('slCount').textContent=SL.size;
+  document.getElementById('dockCount').textContent=SL.size;
+  document.getElementById('dockWord').textContent=SL.size===1?'word':'words';
+}
+function rerender(){ if(view==='browse')renderBrowse(); else if(view==='shortlist')renderShortlist(); else renderStudy(); }
+function go(v){ view=v; syncTabs(); rerender(); window.scrollTo({top:0,behavior:'smooth'}); }
+function syncTabs(){ document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.dataset.v===view)); }
+
+/* ---------- WIRE UP ---------- */
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>go(t.dataset.v));
+document.getElementById('search').addEventListener('input',e=>{ query=e.target.value.trim();
+  if(view==='study'){ go('browse'); document.getElementById('search').value=query; } rerender(); });
+document.querySelectorAll('#pyMode button').forEach(b=>b.onclick=()=>{
+  settings.py=b.dataset.m; saveSet();
+  document.querySelectorAll('#pyMode button').forEach(x=>x.classList.toggle('on',x===b)); rerender();
+});
+document.querySelectorAll('#colMode button').forEach(b=>b.onclick=()=>{
+  settings.col=b.dataset.c==='1'; saveSet();
+  document.querySelectorAll('#colMode button').forEach(x=>x.classList.toggle('on',x===b)); rerender();
+});
+document.getElementById('studyBtn').onclick=()=>{ if(!SL.size){go('shortlist');} else startStudy(); };
+document.getElementById('clearBtn').onclick=()=>{ if(SL.size&&confirm('Clear your whole shortlist?')){ SL.clear(); saveSL(); refreshCounts(); rerender(); } };
+
+/* ---------- INIT ---------- */
+(async function(){
+  await loadState();
+  // reflect loaded settings in toggles
+  document.querySelectorAll('#pyMode button').forEach(x=>x.classList.toggle('on',x.dataset.m===settings.py));
+  document.querySelectorAll('#colMode button').forEach(x=>x.classList.toggle('on',(x.dataset.c==='1')===settings.col));
+  refreshCounts(); renderBrowse();
+})();
+</script>
+</body>
+</html>
