@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -159,6 +160,9 @@
   .lesson-tab:hover:not(.active){background:var(--steel-wash);}
   .lesson-pane{display:none;}
   .lesson-pane.active{display:block;}
+  /* clarified-word highlight */
+  tr.clar td{background:#fbf3df;}
+  .star{color:var(--gold);font-weight:800;margin-right:4px;}
   /* benchmark assessment */
   .assess{margin-top:16px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:18px 20px;max-width:700px;}
   .assess-h{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--steel);font-weight:700;margin-bottom:10px;}
@@ -199,6 +203,7 @@
       <span class="lt-label">Lessons</span>
       <button class="lesson-tab active" data-pane="pane-2026-07-05">05 Jul 2026 · 自我介绍与业务介绍</button>
       <button class="lesson-tab" data-pane="pane-2026-07-09">09 Jul 2026 · 五大支柱与商业版图</button>
+      <button class="lesson-tab" data-pane="pane-2026-07-12">12 Jul 2026 · 修订与句型</button>
     </div>
   </div>
 </header>
@@ -1169,8 +1174,246 @@
 
   </div><!-- /lesson-pane 2026-07-09 -->
 
+
+  <div class="lesson-pane" id="pane-2026-07-12">
+    <div class="lesson-meta">
+      <div class="lm-row"><span class="lm-k">Lesson</span><span class="lm-v">Sunday 12 July 2026, 8:00 AM · Tutor: Queenie Chow (周老师) · built from the full verbatim transcript</span></div>
+      <div class="lm-row"><span class="lm-k">Topic</span><span class="lm-v"><span class="zh">修订与句型</span> — line-by-line refinement of both business scripts, sentence patterns, and the grammar of market share (占)</span></div>
+      <div class="lm-row"><span class="lm-k">Milestone</span><span class="lm-v">First unscripted personal conversation held entirely in Chinese (your family) — see benchmark</span></div>
+      <div class="lm-row"><span class="lm-k">Next lesson</span><span class="lm-v">Thursday 16 July, 4:30 PM (usual schedule)</span></div>
+      <div class="lm-nav">
+        <a href="#part-vocab-l3">1 · Vocabulary &amp; patterns</a>
+        <a href="#part-dialogues-l3">2 · Dialogues</a>
+        <a href="#part-culture-l3">3 · Cultural context</a>
+        <a href="#part-extras-l3">4 · Extras</a>
+        <a href="#part-practice-l3">5 · Practice</a>
+      </div>
+    </div>
+
+    <div class="assess">
+      <div class="assess-h">Benchmark assessment — from the 12 July verbatim transcript (CEFR · HSK), third data point</div>
+      <div class="assess-overall">Overall: <b>CEFR A2 upper–B1 borderline · ≈ HSK 3</b> — and for the first time, one skill has crossed a band line. Trajectory over three samples: interaction A2+ → A2+↗ → <b>B1−</b>.</div>
+      <div class="arow"><span class="sk">Spoken interaction</span><span class="gr">B1− · crossed ↗</span><span class="ev">The CEFR B1 descriptor is "can enter unprepared into conversation on familiar topics" — and that happened: a spontaneous, unscripted exchange about your three daughters and one-and-a-half-year-old son, held in Chinese with no preparation. Plus continuous meaning-negotiation (经销跟销售有什么不同？其次是像next吗？混淆是什么？), correcting her mishearing (不是64啦，是60), reasoning about characters (占——不是站起来的站，对不对？), and closing the lesson in Chinese (老师，我们上到这里可以吗？).</span></div>
+      <div class="arow"><span class="sk">Listening</span><span class="gr">B1 · steady+</span><span class="ev">Followed a full hour of majority-Chinese instruction including abstract explanations (listing vs narrative sequencing, why 交易 duplicates 收购) with noticeably less English scaffolding than 9 July.</span></div>
+      <div class="arow"><span class="sk">Spoken production</span><span class="gr">A2+ ↗</span><span class="ev">Both scripts delivered nearly end-to-end with only word-level prompts; self-intro drew a 「so much better」. Layered content argument produced in Chinese: 上面讲的是原糖的市场份额，下面是炼糖的 — defending the script’s logic, not just reciting it.</span></div>
+      <div class="arow"><span class="sk">Grammar</span><span class="gr">A2+ ↗</span><span class="ev">Patterns accumulating and being used live: 除了…还…, 占了…的X%, 已经…了, 加起来. The pattern inventory is now the visible growth edge.</span></div>
+      <div class="arow"><span class="sk">Pronunciation</span><span class="gr">A1–A2 · binding</span><span class="ev">Still the constraint, with today’s star offender 支柱 → 自主/自助/资助 (five attempts), plus 糖蜜→蜜糖 (molasses became honey), 份额→愤而, 原糖→盐糖. All drilled in Part 5. The errors remain systematic — trainable.</span></div>
+      <div class="assess-caveat">Three verbatim samples in eight days. The B1− interaction call rests on the unprepared-conversation criterion being genuinely met; hold the grade with one-sample humility, but the direction is no longer ambiguous. Re-grade around lesson 6.</div>
+    </div>
+
+  <div class="part" id="part-vocab-l3"><span class="part-num">PART 1</span><span class="part-title"><span class="zh">词汇与句型</span>Vocabulary &amp; sentence patterns</span></div>
+
+  <section>
+    <h2>Words you stopped to clarify <span class="star">★</span></h2>
+    <div class="ped-note"><b>Highlighted rows (★)</b> are the words where you halted the lesson and asked — which makes them the highest-value entries on this page: a question you asked is a gap you’ve personally located. Every one is in the flashcard deck.</div>
+    <div class="vocab-scroll">
+      <table>
+        <thead><tr><th>Chinese</th><th>Pinyin</th><th>English</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr class="clar"><td class="zh">经销 vs 销售</td><td class="py">jīngxiāo / xiāoshòu</td><td>distribute vs sell</td><td class="note"><span class="star">★</span>销售 = pure selling (a sales office); 经销 = distributor incl. wholesale. Either works for your branches.</td></tr>
+          <tr class="clar"><td class="zh">贸易 vs 交易</td><td class="py">màoyì / jiāoyì</td><td>trade vs transaction</td><td class="note"><span class="star">★</span>贸易 = trade as a flow (国际贸易); 交易 = a deal between two parties. Hence 贸易商, never 交易商.</td></tr>
+          <tr class="clar"><td class="zh">收购</td><td class="py">shōugòu</td><td>to buy up, buy in</td><td class="note"><span class="star">★</span>Pure buying — which is why pairing it with 交易 was redundant (both are transactions).</td></tr>
+          <tr class="clar"><td class="zh">占 / 占了</td><td class="py">zhàn / zhàn le</td><td>to occupy, account for</td><td class="note"><span class="star">★</span>Your question: "not the 站 of standing up?" Correct — different character. THE market-share verb: 占了…的60%.</td></tr>
+          <tr class="clar"><td class="zh">百分之…</td><td class="py">bǎifēnzhī…</td><td>percent (the standard form)</td><td class="note"><span class="star">★</span>Cut the cake into 100, take X. "Sixty percent" spoken English-style is a Singapore/Malaysia habit; Taiwan says 60趴 informally. Formal reports: 百分之六十, always.</td></tr>
+          <tr class="clar"><td class="zh">其次</td><td class="py">qícì</td><td>next, secondly</td><td class="note"><span class="star">★</span>The narrative "second" after 首先 — see the sequencing pattern below.</td></tr>
+          <tr class="clar"><td class="zh">板块</td><td class="py">bǎnkuài</td><td>segment, section</td><td class="note"><span class="star">★</span>The fallback if 支柱 trips your tongue: 五大板块. Weaker image (areas, not supports) but listeners barely notice.</td></tr>
+          <tr class="clar"><td class="zh">当地</td><td class="py">dāngdì</td><td>local (that place)</td><td class="note"><span class="star">★</span>占当地的15% = 15% of the local market. Droppable once the pattern is established — listeners won’t 混淆.</td></tr>
+          <tr class="clar"><td class="zh">接近</td><td class="py">jiējìn</td><td>close to, approaching</td><td class="note"><span class="star">★</span>Your "just below ninety": 接近90% — near but not yet at.</td></tr>
+          <tr class="clar"><td class="zh">混淆</td><td class="py">hùnxiáo</td><td>to mix up, confuse</td><td class="note"><span class="star">★</span>他们不会混淆 = they won’t get confused.</td></tr>
+          <tr class="clar"><td class="zh">重复</td><td class="py">chóngfù</td><td>to repeat, duplicate</td><td class="note"><span class="star">★</span>Why 收购和交易 failed: 重复的动作 — a duplicated action.</td></tr>
+          <tr class="clar"><td class="zh">敏感 / 数字敏感</td><td class="py">mǐngǎn / shùzì mǐngǎn</td><td>sensitive / numbers-sensitive</td><td class="note"><span class="star">★</span>对数字敏感的人 will connect your 4.5Mt capacity to your 12Mt volume — and your third-party line answers them.</td></tr>
+          <tr class="clar"><td class="zh">透支</td><td class="py">tòuzhī</td><td>overdrawn (money or energy)</td><td class="note"><span class="star">★</span>From the opening chat about your 1 AM message: 不能透支 — don’t overdraw yourself. 支 = 支出, outflow; 透 = through/beyond.</td></tr>
+          <tr class="clar"><td class="zh">幻灯片 / PPT</td><td class="py">huàndēngpiàn / PPT</td><td>slides / deck</td><td class="note"><span class="star">★</span>Everyone just says PPT. 幻灯片 is the formal word — recognise it, don’t bother producing it.</td></tr>
+          <tr class="clar"><td class="zh">各占一半</td><td class="py">gè zhàn yíbàn</td><td>each holds half</td><td class="note"><span class="star">★</span>The native 50-50: 我们和沙特伙伴各占一半的合资公司. Supersedes 五五合资 (a direct English translation, less used).</td></tr>
+          <tr><td class="zh">同时</td><td class="py">tóngshí</td><td>at the same time</td><td class="note">The pivot between mills and refineries: 同时，我们还有三家炼糖厂.</td></tr>
+          <tr><td class="zh">首先 / 最后</td><td class="py">shǒuxiān / zuìhòu</td><td>first of all / lastly</td><td class="note">The bookends of the narrative sequence.</td></tr>
+          <tr><td class="zh">临场发挥</td><td class="py">línchǎng fāhuī</td><td>to improvise on the spot</td><td class="note">Queenie’s licence: which countries you name in the brands line is 临场发挥 — flex it live.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Sentence patterns — the toolkit from this lesson</h2>
+    <div class="ped-note"><b>Why these matter more than words:</b> Queenie’s opening point was that HSK levels are partly measured by <i>patterns</i>, not vocabulary — and your scripts now run on them. Each pattern below is a machine that builds unlimited sentences; the example shows it working inside your own material.</div>
+    <div class="vocab-scroll">
+      <table>
+        <thead><tr><th>Pattern</th><th>Pinyin</th><th>Meaning</th><th>In your script</th></tr></thead>
+        <tbody>
+          <tr><td class="zh">A 跟 B 一样 + adj</td><td class="py">A gēn B yíyàng…</td><td>A is as … as B</td><td class="note">今年的产量跟去年一样大 — this year’s output is as large as last year’s.</td></tr>
+          <tr><td class="zh">既 A 又 B</td><td class="py">jì A yòu B</td><td>both A and B</td><td class="note">印度既出口又进口 (from Lesson 2, reinforced today with 既漂亮又聪明).</td></tr>
+          <tr><td class="zh">除了 A，还/也 B</td><td class="py">chúle A, hái/yě B</td><td>besides A, also B</td><td class="note">它们除了生产原糖，还生产乙醇和发电.</td></tr>
+          <tr><td class="zh">占（了）…的 X%</td><td class="py">zhàn (le) … de X%</td><td>accounts for X% of …</td><td class="note">占了整个澳大利亚糖产能的60% — Queenie: "these characters are used constantly."</td></tr>
+          <tr><td class="zh">…加起来 / 合起来</td><td class="py">…jiā qǐlai / hé qǐlai</td><td>added together</td><td class="note">它们的产能加起来，占了… — sums before shares.</td></tr>
+          <tr><td class="zh">已经…了</td><td class="py">yǐjīng…le</td><td>already (duration/state)</td><td class="note">我们的品牌已经有一百多年的历史了.</td></tr>
+          <tr><td class="zh">首先…其次…第三…最后</td><td class="py">shǒuxiān…qícì…dì sān…zuìhòu</td><td>narrative sequencing</td><td class="note">The spine of the five-pillar script — see the culture card on why not 第一/第二.</td></tr>
+          <tr><td class="zh">X 分之 Y</td><td class="py">X fēnzhī Y</td><td>fractions (Y of X parts)</td><td class="note">二分之一 = ½, 三分之一 = ⅓, 百分之六十 = 60%. One logic — cut the cake into X, take Y.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="part" id="part-dialogues-l3"><span class="part-num">PART 2</span><span class="part-title"><span class="zh">对话</span>Dialogues — options, then finals</span></div>
+
+  <section>
+    <h2>Same thing, more than one way — the choices from class</h2>
+    <div class="ped-note"><b>How to read this:</b> each row is a fork Queenie explicitly discussed. The <b>chosen</b> form is what the final scripts below use; the alternatives remain legitimate — she granted you freedom precisely so you’re "not locked into memorising certain sentences." If a chosen form jams mid-delivery, any alternative in its row is safe.</div>
+    <div class="assess" style="margin-bottom:22px;">
+      <div class="assess-h">Phrasing options — chosen form in bold</div>
+      <div class="arow"><span class="sk">Sequencing</span><span class="gr"><b>首先…其次…</b><span class="pys">then 第三 / 最后</span></span><span class="ev">Alternatives: 第一…第二…第三. Chosen because this speech is a narrative, not an announced list — and you may revert to 第三/第四 mid-flow to keep count. Both grammatical.</span></div>
+      <div class="arow"><span class="sk">"Five pillars"</span><span class="gr"><b>五大支柱</b><span class="pys">wǔ dà zhīzhù</span></span><span class="ev">Alternative: 五大板块 (sections). 支柱 is stronger — "the business is <i>supported</i> by these five" — but 板块 is the escape hatch when zhīzhù won’t come out (it fought you five times today).</span></div>
+          <div class="arow"><span class="sk">Third-party line</span><span class="gr"><b>收购第三方的糖，进行贸易</b><span class="pys">shōugòu … jìnxíng màoyì</span></span><span class="ev">Alternatives: 收购和交易第三方的糖 (rejected — 收购 is itself a transaction, so 交易 duplicates it); 收购第三方的糖 alone (fine, less complete); 通过收购第三方的糖来进行贸易 (fine, fuller). Chosen form says buy <i>in order to</i> trade — matching the causal argument.</span></div>
+      <div class="arow"><span class="sk">50-50 JV</span><span class="gr"><b>各占一半的合资公司</b><span class="pys">gè zhàn yíbàn</span></span><span class="ev">Alternative: 五五合资 — understood, but Queenie flagged it as a direct English translation natives rarely use. 各占一半 also reuses your new 占. (Supersedes the Lesson 2 vocab entry.)</span></div>
+      <div class="arow"><span class="sk">Power line</span><span class="gr"><b>还生产乙醇和发电</b><span class="pys">hái shēngchǎn yǐchún hé fādiàn</span></span><span class="ev">Alternative: 它还有一个发电厂 (as a separate asset). In a produce-list frame, 发电厂 sounds like <i>another factory</i> — so verb form 发电 wins here. Context decides; this reverses the Lesson 2 note, which applied to a different sentence frame.</span></div>
+      <div class="arow"><span class="sk">India brand</span><span class="gr"><b>我们糖的品牌是印度第一的品牌</b><span class="pys"></span></span><span class="ev">Alternative: 我们的品牌是印度第一的糖品牌. Both correct — put 糖 where it feels natural in the moment.</span></div>
+      <div class="arow"><span class="sk">Local share</span><span class="gr"><b>市场份额大约占当地的15%</b><span class="pys">dāngdì de</span></span><span class="ev">Alternative: 在当地，我们的市场份额大约占15% (fronted). And once the per-country pattern is established, 当地 can drop entirely — listeners won’t 混淆.</span></div>
+      <div class="arow"><span class="sk">Approximately</span><span class="gr"><b>大约占</b><span class="pys">dàyuē zhàn</span></span><span class="ev">大约 / 大概 / 约占 all interchangeable; what’s non-negotiable is the 占.</span></div>
+    </div>
+
+    <h2>FINAL — Business introduction v3 (no-slides narrative)</h2>
+    <div class="flow-card">
+      <div class="hanzi zh">下面我会介绍一下我们丰益集团的情况。我们丰益集团的糖业务是一体化的。首先，我们有自己的原糖厂和炼糖厂 —— 在澳大利亚、新西兰、印尼、缅甸、印度和沙特。除了糖厂之外，我们的总部在新加坡；在瑞士的日内瓦、巴西的圣保罗和迪拜都有分公司；在泰国有代办处。这些分公司经销我们自己生产的糖。因为我们自有的贸易量很大，买卖别人的糖也变得容易 —— 所以我们也收购第三方的糖，进行贸易。通过贸易，我们把糖厂和分公司的所有业务连在一起 —— 这就是一体化。我们是全球最大的糖贸易商，一年的贸易量达到一千二百万吨左右。在巴西、泰国和澳大利亚，我们的贸易份额都是第一。我们也是全球最大的炼糖商之一，产能达到四百五十万吨左右。我们在澳大利亚有八处原糖厂。它们除了生产原糖，还生产乙醇和发电；产能加起来，占了整个澳大利亚糖产能的百分之六十。我们在澳新、沙特和印度也有很多知名的消费品牌。</div>
+      <div class="pinyin">Xiàmiàn wǒ huì jièshào yíxià wǒmen Fēngyì Jítuán de qíngkuàng. Wǒmen Fēngyì Jítuán de táng yèwù shì yìtǐhuà de. Shǒuxiān, wǒmen yǒu zìjǐ de yuántángchǎng hé liàntángchǎng — zài Àodàlìyà, Xīnxīlán, Yìnní, Miǎndiàn, Yìndù hé Shātè. Chúle tángchǎng zhīwài, wǒmen de zǒngbù zài Xīnjiāpō; zài Ruìshì de Rìnèiwǎ, Bāxī de Shèngbǎoluó hé Díbài dōu yǒu fēngōngsī; zài Tàiguó yǒu dàibànchù. Zhèxiē fēngōngsī jīngxiāo wǒmen zìjǐ shēngchǎn de táng. Yīnwèi wǒmen zìyǒu de màoyìliàng hěn dà, mǎimài biéren de táng yě biàn de róngyì — suǒyǐ wǒmen yě shōugòu dìsānfāng de táng, jìnxíng màoyì. Tōngguò màoyì, wǒmen bǎ tángchǎng hé fēngōngsī de suǒyǒu yèwù lián zài yìqǐ — zhè jiù shì yìtǐhuà. Wǒmen shì quánqiú zuì dà de táng màoyìshāng, yì nián de màoyìliàng dádào yìqiān èrbǎi wàn dūn zuǒyòu. Zài Bāxī, Tàiguó hé Àodàlìyà, wǒmen de màoyì fèn’é dōu shì dì yī. Wǒmen yě shì quánqiú zuì dà de liàntángshāng zhī yī, chǎnnéng dádào sìbǎi wǔshí wàn dūn zuǒyòu. Wǒmen zài Àodàlìyà yǒu bā chù yuántángchǎng. Tāmen chúle shēngchǎn yuántáng, hái shēngchǎn yǐchún hé fādiàn; chǎnnéng jiā qǐlai, zhàn le zhěnggè Àodàlìyà táng chǎnnéng de bǎifēnzhī liùshí. Wǒmen zài Àoxīn, Shātè hé Yìndù yě yǒu hěn duō zhīmíng de xiāofèi pǐnpái.</div>
+      <div class="english">Next, let me introduce our Wilmar Group’s situation. Our sugar business is integrated. First, we have our own raw sugar mills and refineries — in Australia, New Zealand, Indonesia, Myanmar, India and Saudi Arabia. Beyond the plants, our headquarters is in Singapore; we have branch offices in Geneva (Switzerland), São Paulo (Brazil) and Dubai, and a representative office in Thailand. These branches distribute the sugar we produce. Because our own traded volume is so large, trading other people’s sugar becomes easy — so we also buy third-party sugar and trade it. Through trading, we join the mills and branches into one business — that is what integrated means. We are the world’s largest sugar trader, around twelve million tonnes a year. In Brazil, Thailand and Australia our trade share is number one. We are also among the world’s largest refiners, with capacity around 4.5 million tonnes. In Australia we have eight raw sugar mills; besides raw sugar they also produce ethanol and generate power, and their combined capacity accounts for sixty percent of Australia’s entire sugar capacity. In ANZ, Saudi Arabia and India we also have many well-known consumer brands.</div>
+      <div class="flow-note">New since v2: the 下面我会介绍一下 opener; 它们 as spoken subject ("no one can hear your punctuation"); the 占了…的百分之六十 share line; 发电 not 发电厂 in this frame; Saudi added to the brands line — 临场发挥, per Queenie. Figure flag: the 60% mills-capacity share is your in-class number (you corrected her 64 to 60); the deck says "over half of Australia’s raw sugar" — reconcile once before using with a numbers-sensitive (数字敏感) audience.</div>
+    </div>
+
+    <h2>FINAL — <span class="zh">五大支柱</span> v2 (with-deck script)</h2>
+    <div class="flow-card">
+      <div class="hanzi zh">大家请看这个PPT。我们的糖业务有五大支柱。首先，丰益糖业私人有限公司是我们的贸易公司，总部在新加坡。我们做原糖、白糖和糖蜜的贸易。我们是全球最大的糖贸易商，市场份额大约占百分之三十。我们在迪拜、日内瓦和圣保罗都有分公司。在巴西、泰国和澳大利亚，我们是最大的买家。其次是澳新。我们在澳大利亚有八家原糖厂，生产澳大利亚一半以上的原糖，也生产乙醇和可再生电力。同时，我们还有三家炼糖厂：两家在澳大利亚，一家在新西兰。市场份额在澳大利亚大约占百分之六十，新西兰接近百分之九十。我们的品牌已经有一百多年的历史了。第三是印尼：我们有两家炼糖厂，市场份额大约占当地的百分之十五。第四是印度。我们有八家糖厂和两家炼糖厂。坎德拉的炼糖厂是世界上效率最高的之一。我们的糖厂生产糖、乙醇和电力。我们糖的品牌是印度第一的品牌。最后是沙特的Durrah —— 一家炼糖厂，是我们和沙特伙伴各占一半的合资公司。市场份额大约占当地的百分之六十。</div>
+      <div class="pinyin">Dàjiā qǐng kàn zhè ge PPT. Wǒmen de táng yèwù yǒu wǔ dà zhīzhù. Shǒuxiān, Fēngyì Tángyè Sīrén Yǒuxiàn Gōngsī shì wǒmen de màoyì gōngsī, zǒngbù zài Xīnjiāpō. Wǒmen zuò yuántáng, báitáng hé tángmì de màoyì. Wǒmen shì quánqiú zuì dà de táng màoyìshāng, shìchǎng fèn’é dàyuē zhàn bǎifēnzhī sānshí. Wǒmen zài Díbài, Rìnèiwǎ hé Shèngbǎoluó dōu yǒu fēngōngsī. Zài Bāxī, Tàiguó hé Àodàlìyà, wǒmen shì zuì dà de mǎijiā. Qícì shì Àoxīn. Wǒmen zài Àodàlìyà yǒu bā jiā yuántángchǎng, shēngchǎn Àodàlìyà yíbàn yǐshàng de yuántáng, yě shēngchǎn yǐchún hé kězàishēng diànlì. Tóngshí, wǒmen hái yǒu sān jiā liàntángchǎng: liǎng jiā zài Àodàlìyà, yì jiā zài Xīnxīlán. Shìchǎng fèn’é zài Àodàlìyà dàyuē zhàn bǎifēnzhī liùshí, Xīnxīlán jiējìn bǎifēnzhī jiǔshí. Wǒmen de pǐnpái yǐjīng yǒu yìbǎi duō nián de lìshǐ le. Dì sān shì Yìnní: wǒmen yǒu liǎng jiā liàntángchǎng, shìchǎng fèn’é dàyuē zhàn dāngdì de bǎifēnzhī shíwǔ. Dì sì shì Yìndù. Wǒmen yǒu bā jiā tángchǎng hé liǎng jiā liàntángchǎng. Kǎndélā de liàntángchǎng shì shìjiè shang xiàolǜ zuì gāo de zhī yī. Wǒmen de tángchǎng shēngchǎn táng, yǐchún hé diànlì. Wǒmen táng de pǐnpái shì Yìndù dì yī de pǐnpái. Zuìhòu shì Shātè de Durrah — yì jiā liàntángchǎng, shì wǒmen hé Shātè huǒbàn gè zhàn yíbàn de hézī gōngsī. Shìchǎng fèn’é dàyuē zhàn dāngdì de bǎifēnzhī liùshí.</div>
+      <div class="english">Please look at this deck. Our sugar business has five pillars. First, Wilmar Sugar Pte Ltd is our trading company, headquartered in Singapore. We trade raw sugar, white sugar and molasses. We are the world’s largest sugar trader, holding roughly 30% market share. We have branch offices in Dubai, Geneva and São Paulo. In Brazil, Thailand and Australia we are the largest buyer. Next is ANZ. In Australia we have eight raw sugar mills producing over half of Australia’s raw sugar, plus ethanol and renewable power. At the same time, we have three refineries: two in Australia, one in New Zealand. Market share is roughly 60% in Australia and close to 90% in New Zealand. Our brands already have over a hundred years of history. Third is Indonesia: two refineries, roughly 15% of the local market. Fourth is India: eight mills and two refineries; the Kandla refinery is among the world’s most efficient; the mills produce sugar, ethanol and power, and our sugar brand is India’s number one. Lastly, Durrah in Saudi Arabia — a refinery, a joint venture in which we and our Saudi partners each hold half. Roughly 60% of the local market.</div>
+      <div class="flow-note">Every change from Sunday is in: 首先/其次/第三/最后 spine, 是我们的贸易公司 (the audible dash), 大约占 on every share, 同时 pivot, 接近90%, 已经…了 on the brands, 当地的, and 各占一半. Delivery rule of the day: the audience can’t hear your punctuation — give every clause a subject.</div>
+    </div>
+  </section>
+
+  <div class="part" id="part-culture-l3"><span class="part-num">PART 3</span><span class="part-title"><span class="zh">文化背景</span>Cultural context</span></div>
+
+  <section>
+    <h2>From this lesson — the context behind the language</h2>
+    <div class="tips">
+      <div class="tip"><b><span class="zh">小三</span> — the trap you walked straight into:</b> describing your third daughter you reached for 小三 — which in modern Chinese means <i>mistress</i> (the "little third" in a marriage). Queenie caught it instantly: say <span class="zh">第三个女儿</span>. This is the single most dangerous false-friend of the week; at a dinner table it would detonate. File alongside it: 老三 (informal "number-three child") is safe among family, but 第三个孩子/女儿 is bulletproof.</div>
+      <div class="tip"><b>Daughters, in Chinese idiom:</b> two lovely set phrases from the family chat. <span class="zh">贴心小棉袄</span> — a daughter is her father’s "heart-warming little padded jacket" (贴心 = close to the heart, 棉袄 = the thick winter coat Singapore never needs). And <span class="zh">女儿是爸爸前世的情人</span> — "a daughter is her father’s lover from a past life" (前世 = previous incarnation). With three daughters, you will hear both from Chinese counterparts; smiling recognition is worth more than grammar.</div>
+      <div class="tip"><b><span class="zh">首先</span> vs <span class="zh">第一</span> — narrative or list?</b> Queenie’s sequencing rule: 第一/第二/第三 tells the audience "I announced a list — receive these as numbered points." 首先/其次 tells a story. Your company introduction is a story, so it opens 首先…其次… — and then, quietly, you may switch to 第三/第四/最后 to keep yourself from dropping a pillar. The audience never notices; the speaker keeps count. A device, not a rule.</div>
+      <div class="tip"><b><span class="zh">百分之</span> and the geography of percent:</b> the standard is 百分之六十, built on cake-cutting logic (cut into 100, take 60) — same machine as 二分之一 (½) and 三分之一 (⅓). Saying "sixty percent" in English mid-sentence is a Singapore/Malaysia/Indonesia habit; mainlanders will usually follow but it marks you. Taiwan’s informal 60趴 (pā, from "percent") is considered stylish there, non-standard everywhere else. Queenie teaches GIC’s people the 百分之 form in their first lesson — that’s how load-bearing it is in financial Chinese.</div>
+      <div class="tip"><b><span class="zh">透支</span> — the overdraft of the self:</b> her opening scold for your 1 AM message: 不能太透支 — don’t overdraw yourself. 支 is outflow (支出); 透支 is drawing beyond the balance — used identically for bank accounts and human energy. A word your Chinese counterparts use constantly about work culture, and now attached to a story you’ll remember.</div>
+    </div>
+  </section>
+
+  <div class="part" id="part-extras-l3"><span class="part-num">PART 4</span><span class="part-title"><span class="zh">拓展</span>Extras — additions to the word bank</span></div>
+
+  <section>
+    <div class="ped-note"><b>Rolling bank, lesson 3 deposits:</b> base bank in the 05 Jul tab, lesson 2 deposits in the 09 Jul tab. Patterns first, as always — and this lesson was nearly all patterns (see Part 1). Below are the loose words worth banking.</div>
+    <div class="vocab-scroll">
+      <table>
+        <thead><tr><th>Chinese</th><th>Pinyin</th><th>English</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td class="zh">进行</td><td class="py">jìnxíng</td><td>to carry out, conduct</td><td class="note">进行贸易 / 进行讨论 — the formal verb that turns a noun into an activity.</td></tr>
+          <tr><td class="zh">情况</td><td class="py">qíngkuàng</td><td>situation, state of affairs</td><td class="note">介绍一下…的情况 — the all-purpose briefing noun.</td></tr>
+          <tr><td class="zh">整个</td><td class="py">zhěnggè</td><td>the entire, the whole</td><td class="note">整个澳大利亚糖产能 — scales any noun up to totality.</td></tr>
+          <tr><td class="zh">大约 / 大概 / 约</td><td class="py">dàyuē / dàgài / yuē</td><td>approximately</td><td class="note">Interchangeable; 约占 is the compact written-ish form.</td></tr>
+          <tr><td class="zh">一半以上</td><td class="py">yíbàn yǐshàng</td><td>more than half</td><td class="note">Prior deposit, now load-bearing in the ANZ line.</td></tr>
+          <tr><td class="zh">继续</td><td class="py">jìxù</td><td>to continue</td><td class="note">我们可以继续 — drilled hard today (jì-xù, both falling-ish, fourth+fourth).</td></tr>
+          <tr><td class="zh">前世</td><td class="py">qiánshì</td><td>previous life</td><td class="note">From the daughters idiom — Buddhist-inflected everyday Chinese.</td></tr>
+          <tr><td class="zh">呢 (topic marker)</td><td class="py">ne</td><td>as for… / and…?</td><td class="note">其次呢，… — the little particle Queenie uses to hand a topic forward. Free to steal.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="part" id="part-practice-l3"><span class="part-num">PART 5</span><span class="part-title"><span class="zh">练习</span>Practice exercises</span></div>
+
+  <section id="practice-l3">
+    <h2>Interactive practice — lesson 3 material</h2>
+    <div class="ped-note"><b>Focus of this set:</b> the 占 grammar, the sequencing spine, and a tone clinic built around today’s five-time offender 支柱. Rotate with the earlier tabs’ drills across the week.</div>
+
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-mode="m-cloze-l3">1 · Cloze recall</button>
+      <button class="tab" data-mode="m-build-l3">2 · Sentence builder</button>
+      <button class="tab" data-mode="m-flash-l3">3 · Flashcards EN→中</button>
+      <button class="tab" data-mode="m-tone-l3">4 · 支柱 &amp; tone clinic</button>
+      <button class="tab" data-mode="m-ladder-l3">5 · Rehearsal ladder</button>
+    </div>
+
+    <div class="mode active card" id="m-cloze-l3">
+      <div class="mode-desc"><b>Retrieval practice</b> — recall before you look, say it aloud, tap to check. Misses recycle.</div>
+      <div class="q-hanzi zh" id="cloze-q-l3"></div>
+      <div class="q-sub" id="cloze-en-l3"></div>
+      <div class="opts" id="cloze-opts-l3"></div>
+      <div class="feedback" id="cloze-fb-l3"></div>
+      <div class="nav-row">
+        <span class="progress" id="cloze-prog-l3"></span>
+        <button class="btn ghost" id="cloze-restart-l3">Restart round</button>
+      </div>
+    </div>
+
+    <div class="mode card" id="m-build-l3">
+      <div class="mode-desc"><b>Syntax chunking</b> — tap the chips in order; tap a placed chip to remove it.</div>
+      <div class="q-sub" id="build-en-l3"></div>
+      <div class="answer-row" id="build-answer-l3"></div>
+      <div class="pool" id="build-pool-l3"></div>
+      <div class="feedback" id="build-fb-l3"></div>
+      <div class="nav-row">
+        <span class="progress" id="build-prog-l3"></span>
+        <div style="display:flex;gap:8px;">
+          <button class="btn ghost" id="build-clear-l3">Clear</button>
+          <button class="btn" id="build-next-l3">Next sentence</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="mode card" id="m-flash-l3">
+      <div class="mode-desc"><b>Production + spacing</b> — say the Chinese aloud from the English prompt, then tap to check. ★ cards are your own clarification questions.</div>
+      <div class="flash" id="flash-card-l3">
+        <div class="front-en" id="flash-front-l3"></div>
+        <div class="back-zh zh" id="flash-zh-l3" style="display:none;"></div>
+        <div class="back-py" id="flash-py-l3" style="display:none;"></div>
+        <div class="tap" id="flash-tap-l3">Tap to reveal</div>
+      </div>
+      <div class="grade-row" id="flash-grades-l3" style="visibility:hidden;">
+        <button class="btn ghost" id="flash-say-l3">🔊 Hear it</button>
+        <button class="btn again" id="flash-again-l3">Again ↻</button>
+        <button class="btn got" id="flash-got-l3">Got it ✓</button>
+      </div>
+      <div class="nav-row">
+        <span class="progress" id="flash-prog-l3"></span>
+        <button class="btn ghost" id="flash-restart-l3">Restart deck</button>
+      </div>
+    </div>
+
+    <div class="mode card" id="m-tone-l3">
+      <div class="mode-desc"><b>The 支柱 clinic</b> — today it came out as 自主, 自助 and 资助. Pick the right pinyin, listen, exaggerate, repeat.</div>
+      <div class="q-hanzi zh" id="tone-q-l3"></div>
+      <div class="q-sub" id="tone-en-l3"></div>
+      <div class="opts" id="tone-opts-l3"></div>
+      <div class="feedback" id="tone-fb-l3"></div>
+      <div class="nav-row">
+        <span class="progress" id="tone-prog-l3"></span>
+        <button class="btn ghost" id="tone-restart-l3">Restart round</button>
+      </div>
+    </div>
+
+    <div class="mode card" id="m-ladder-l3">
+      <div class="mode-desc"><b>Fading cues</b> — the two FINAL scripts. Smooth from the skeleton twice = room-ready.</div>
+      <div class="controls" style="margin-bottom:14px;">
+        <button class="toggle" id="lad3-biz" aria-pressed="true">Business intro v3</button>
+        <button class="toggle" id="lad3-pil" aria-pressed="false">五大支柱 v2</button>
+        <button class="toggle" id="ladder-say-l3" aria-pressed="false">🔊 Read this rung aloud</button>
+      </div>
+      <div class="ladder-steps">
+        <button class="lstep3 lstep" data-step="0">1 · Full support</button>
+        <button class="lstep3 lstep" data-step="1">2 · No pinyin</button>
+        <button class="lstep3 lstep" data-step="2">3 · Characters only</button>
+        <button class="lstep3 lstep" data-step="3">4 · Keyword skeleton</button>
+      </div>
+      <div class="ladder-text zh" id="ladder-zh-l3"></div>
+      <div class="ladder-py" id="ladder-py-l3"></div>
+      <div class="ladder-note" id="ladder-note-l3"></div>
+    </div>
+  </section>
+
+  </div><!-- /lesson-pane 2026-07-12 -->
+
   <footer>
-    中文课 · Chinese Lesson Record · One tab per class with Queenie Chow · Each lesson: vocabulary, dialogues, cultural context, extras (rolling word bank), practice · Practice progress resets on reload · Next lesson: Sunday 12 July, 4:30 PM.
+    中文课 · Chinese Lesson Record · One tab per class with Queenie Chow · Each lesson: vocabulary, dialogues, cultural context, extras (rolling word bank), practice · Practice progress resets on reload · Next lesson: Thursday 16 July, 4:30 PM.
   </footer>
 
 </main>
@@ -1483,7 +1726,7 @@ const ladderNotes=[
 ];
 function ladderShow(step){
   ladStep=step;
-  document.querySelectorAll('.lstep:not(.lstep2)').forEach(b=>b.classList.toggle('active',+b.dataset.step===step));
+  document.querySelectorAll('.lstep:not(.lstep2):not(.lstep3)').forEach(b=>b.classList.toggle('active',+b.dataset.step===step));
   const t=ladderTexts[ladKey];
   const zh=document.getElementById('ladder-zh'),py=document.getElementById('ladder-py');
   if(step===3){zh.textContent=t.sk;py.textContent='';}
@@ -1498,7 +1741,7 @@ function ladderPick(key){
 }
 document.getElementById('lad-self').onclick=()=>ladderPick('self');
 document.getElementById('lad-biz').onclick=()=>ladderPick('biz');
-document.querySelectorAll('.lstep:not(.lstep2)').forEach(b=>b.onclick=()=>ladderShow(+b.dataset.step));
+document.querySelectorAll('.lstep:not(.lstep2):not(.lstep3)').forEach(b=>b.onclick=()=>ladderShow(+b.dataset.step));
 ladderShow(0);
 
 /* ---------- MANDARIN AUDIO (Web Speech API) ---------- */
@@ -1766,7 +2009,7 @@ const ladderNotes2=[
 ];
 function ladder2Show(step){
   ladStep2=step;
-  document.querySelectorAll('.lstep2').forEach(b=>b.classList.toggle('active',+b.dataset.step===step));
+  document.querySelectorAll('.lstep2:not(.lstep3)').forEach(b=>b.classList.toggle('active',+b.dataset.step===step));
   const t=ladderTexts2[ladKey2];
   const zh=document.getElementById('ladder-zh-l2'),py=document.getElementById('ladder-py-l2');
   if(step===3){zh.textContent=t.sk;py.textContent='';}
@@ -1784,6 +2027,231 @@ document.getElementById('lad2-s3').onclick=()=>ladder2Pick('s3');
 document.getElementById('ladder-say-l2').onclick=()=>{speak(document.getElementById('ladder-zh-l2').textContent,null);};
 document.querySelectorAll('.lstep2').forEach(b=>b.onclick=()=>ladder2Show(+b.dataset.step));
 ladder2Show(0);
+
+
+/* ================= LESSON 3 PRACTICE ENGINES ================= */
+const clozeData3=[
+ {pre:'市场份额大约',post:'百分之三十。',ans:'占',opts:['占','站','是'],en:'Market share accounts for about 30% \u2014 zh\u00e0n, not the standing-up zh\u00e0n!'},
+ {pre:'它们的产能加起来，',post:'了整个澳大利亚糖产能的百分之六十。',ans:'占',opts:['占','有','到'],en:'Their combined capacity accounts for 60% of Australia\u2019s entire sugar capacity.'},
+ {pre:'',post:'，丰益糖业私人有限公司是我们的贸易公司。',ans:'首先',opts:['首先','第一','最后'],en:'FIRST (narrative opener), Wilmar Sugar Pte Ltd is our trading company.'},
+ {pre:'',post:'是澳新。',ans:'其次',opts:['其次','然后','第二个'],en:'NEXT is ANZ \u2014 the partner of 首先.'},
+ {pre:'它们除了生产原糖，',post:'生产乙醇和发电。',ans:'还',opts:['还','都','再'],en:'Besides raw sugar, they ALSO produce ethanol and generate power.'},
+ {pre:'',post:'，我们还有三家炼糖厂。',ans:'同时',opts:['同时','有时','平时'],en:'AT THE SAME TIME, we also have three refineries.'},
+ {pre:'新西兰',post:'百分之九十。',ans:'接近',opts:['接近','超过','大约'],en:'New Zealand: CLOSE TO 90% \u2014 near but not at.'},
+ {pre:'市场份额大约占',post:'的百分之十五。',ans:'当地',opts:['当地','本地人','地方'],en:'\u2026about 15% of the LOCAL market.'},
+ {pre:'我们的品牌',post:'有一百多年的历史了。',ans:'已经',opts:['已经','以前','曾经'],en:'Our brands ALREADY have over 100 years of history \u2014 已经\u2026了 frame.'},
+ {pre:'是我们和沙特伙伴',post:'的合资公司。',ans:'各占一半',opts:['各占一半','五五合资','一人一半'],en:'\u2026a JV in which each side holds half \u2014 Queenie\u2019s preferred 50-50.'},
+ {pre:'所以我们也收购第三方的糖，',post:'贸易。',ans:'进行',opts:['进行','进去','实行'],en:'\u2026we buy third-party sugar and CONDUCT trade \u2014 j\u00ecnx\u00edng turns a noun into an activity.'},
+ {pre:'下面我会介绍一下我们丰益集团的',post:'。',ans:'情况',opts:['情况','事情','消息'],en:'Next I\u2019ll introduce our group\u2019s SITUATION \u2014 the briefing opener.'}
+];
+let cQ3,cD3,cT3,cL3;
+function cloze3Start(){cQ3=shuffle(clozeData3);cD3=0;cT3=cQ3.length;cloze3Show();}
+function cloze3Show(){
+  cL3=false;const it=cQ3[0];
+  document.getElementById('cloze-q-l3').innerHTML=it.pre+'<span class="blank">\uff1f</span>'+it.post;
+  document.getElementById('cloze-en-l3').textContent=it.en;
+  const box=document.getElementById('cloze-opts-l3');box.innerHTML='';
+  shuffle(it.opts).forEach(o=>{const b=document.createElement('button');b.className='opt zh';b.textContent=o;b.onclick=()=>cloze3Ans(b,o,it);box.appendChild(b);});
+  const fb=document.getElementById('cloze-fb-l3');fb.textContent='';fb.className='feedback';
+  document.getElementById('cloze-prog-l3').textContent='Completed '+cD3+' / '+cT3;
+}
+function cloze3Ans(btn,choice,it){
+  if(cL3)return;cL3=true;
+  const fb=document.getElementById('cloze-fb-l3');
+  document.querySelectorAll('#cloze-opts-l3 .opt').forEach(b=>{b.disabled=true;if(b.textContent===it.ans)b.classList.add('correct');});
+  if(choice===it.ans){fb.textContent='\u2713 Correct \u2014 listen, then repeat aloud.';fb.className='feedback good';cQ3.shift();cD3++;}
+  else{btn.classList.add('wrong');fb.textContent='\u2717 It\u2019s '+it.ans+' \u2014 listen and repeat. This one comes back.';fb.className='feedback bad';cQ3.push(cQ3.shift());}
+  speak(it.pre+it.ans+it.post,null);
+  setTimeout(()=>{if(cQ3.length){cloze3Show();}else{
+    document.getElementById('cloze-q-l3').textContent='\u5b8c\u6210\u4e86\uff01Round complete.';
+    document.getElementById('cloze-en-l3').textContent='Come back tomorrow \u2014 spacing does the rest.';
+    document.getElementById('cloze-opts-l3').innerHTML='';document.getElementById('cloze-fb-l3').textContent='';
+    document.getElementById('cloze-prog-l3').textContent='Completed '+cD3+' / '+cT3;
+  }},3200);
+}
+document.getElementById('cloze-restart-l3').onclick=cloze3Start;
+cloze3Start();
+
+const buildData3=[
+ {chips:['市场份额','在澳大利亚','大约','占','百分之六十'],en:'Market share in Australia accounts for about 60%.'},
+ {chips:['它们的','产能','加起来','占了','整个澳大利亚','糖产能的','百分之六十'],en:'Their combined capacity accounts for 60% of Australia\u2019s entire sugar capacity.'},
+ {chips:['它们','除了','生产原糖','还','生产乙醇','和','发电'],en:'Besides raw sugar, they also produce ethanol and generate power.'},
+ {chips:['我们的','品牌','已经','有','一百多年的','历史','了'],en:'Our brands already have over a hundred years of history.'},
+ {chips:['是','我们','和','沙特伙伴','各占一半','的','合资公司'],en:'\u2026a joint venture in which we and our Saudi partners each hold half.'},
+ {chips:['下面','我会','介绍一下','我们','丰益集团','的','情况'],en:'Next, let me introduce our Wilmar Group\u2019s situation.'}
+];
+let bI3=0,bP3=[];
+function build3Show(){
+  const it=buildData3[bI3];bP3=[];
+  document.getElementById('build-en-l3').textContent='('+(bI3+1)+'/'+buildData3.length+')  \u201c'+it.en+'\u201d';
+  const ans=document.getElementById('build-answer-l3');ans.innerHTML='';ans.className='answer-row';
+  const pool=document.getElementById('build-pool-l3');pool.innerHTML='';
+  shuffle(it.chips.map((c,i)=>({c,i}))).forEach(obj=>{
+    const b=document.createElement('button');b.className='chip zh';b.textContent=obj.c;
+    b.onclick=()=>{bP3.push(obj);b.remove();build3Render();build3Check();};
+    pool.appendChild(b);
+  });
+  document.getElementById('build-fb-l3').textContent='';document.getElementById('build-fb-l3').className='feedback';
+  document.getElementById('build-prog-l3').textContent='Sentence '+(bI3+1)+' of '+buildData3.length;
+}
+function build3Render(){
+  const ans=document.getElementById('build-answer-l3');ans.innerHTML='';
+  bP3.forEach((obj,idx)=>{
+    const b=document.createElement('button');b.className='chip zh';b.textContent=obj.c;
+    b.onclick=()=>{
+      bP3.splice(idx,1);
+      const pl=document.createElement('button');pl.className='chip zh';pl.textContent=obj.c;pl.dataset.i=obj.i;
+      pl.onclick=()=>{bP3.push(obj);pl.remove();build3Render();build3Check();};
+      document.getElementById('build-pool-l3').appendChild(pl);
+      build3Render();
+      document.getElementById('build-answer-l3').className='answer-row';
+      document.getElementById('build-fb-l3').textContent='';
+    };
+    ans.appendChild(b);
+  });
+}
+function build3Check(){
+  const it=buildData3[bI3];
+  if(bP3.length!==it.chips.length)return;
+  const ok=bP3.every((o,idx)=>o.i===idx);
+  const ans=document.getElementById('build-answer-l3'),fb=document.getElementById('build-fb-l3');
+  if(ok){ans.classList.add('done-good');fb.textContent='\u2713 '+it.chips.join('')+' \u2014 listen, then read it aloud twice. ';fb.className='feedback good';fb.appendChild(sayBtn(it.chips.join('')));}
+  else{ans.classList.add('done-bad');fb.textContent='\u2717 Not quite \u2014 tap chips to remove and try again.';fb.className='feedback bad';}
+}
+document.getElementById('build-clear-l3').onclick=build3Show;
+document.getElementById('build-next-l3').onclick=()=>{bI3=(bI3+1)%buildData3.length;build3Show();};
+build3Show();
+
+const flashData3=[
+ {en:'\u2605 to account for / occupy (share)',zh:'占 / 占了',py:'zh\u00e0n / zh\u00e0n le'},
+ {en:'\u2605 trade vs transaction',zh:'贸易 / 交易',py:'m\u00e0oy\u00ec / ji\u0101oy\u00ec'},
+ {en:'\u2605 distribute vs sell',zh:'经销 / 销售',py:'j\u012bngxi\u0101o / xi\u0101osh\u00f2u'},
+ {en:'\u2605 percent \u2014 the standard form (60%)',zh:'百分之六十',py:'b\u01ceif\u0113nzh\u012b li\u00f9sh\u00ed'},
+ {en:'\u2605 next, secondly (after \u9996\u5148)',zh:'其次',py:'q\u00edc\u00ec'},
+ {en:'\u2605 close to, approaching (just below)',zh:'接近',py:'ji\u0113j\u00ecn'},
+ {en:'\u2605 local (of that place)',zh:'当地',py:'d\u0101ngd\u00ec'},
+ {en:'\u2605 to mix up, confuse',zh:'混淆',py:'h\u00f9nxi\u00e1o'},
+ {en:'\u2605 to repeat / duplicated (action)',zh:'重复',py:'ch\u00f3ngf\u00f9'},
+ {en:'\u2605 sensitive to numbers',zh:'数字敏感',py:'sh\u00f9z\u00ec m\u01d0ng\u01cen'},
+ {en:'\u2605 overdrawn (money or energy)',zh:'透支',py:'t\u00f2uzh\u012b'},
+ {en:'\u2605 each holds half (the native 50-50)',zh:'各占一半',py:'g\u00e8 zh\u00e0n y\u00edb\u00e0n'},
+ {en:'\u2605 segment / section (fallback for pillar)',zh:'板块',py:'b\u01cenku\u00e0i'},
+ {en:'to carry out, conduct (trade)',zh:'进行贸易',py:'j\u00ecnx\u00edng m\u00e0oy\u00ec'},
+ {en:'at the same time',zh:'同时',py:'t\u00f3ngsh\u00ed'},
+ {en:'situation (the briefing noun)',zh:'情况',py:'q\u00edngku\u00e0ng'},
+ {en:'the entire / whole',zh:'整个',py:'zh\u011bngg\u00e8'},
+ {en:'to improvise on the spot',zh:'临场发挥',py:'l\u00ednch\u01ceng f\u0101hu\u012b'},
+ {en:'daddy\u2019s heart-warming little padded jacket (a daughter)',zh:'贴心小棉袄',py:'ti\u0113x\u012bn xi\u01ceo mi\u00e1n\u01ceo'},
+ {en:'DANGER: how NOT to say "third daughter"',zh:'第三个女儿（不是小三！）',py:'d\u00ec s\u0101n ge n\u01da\u2019\u00e9r (b\u00fa sh\u00ec xi\u01ceos\u0101n!)'},
+ {en:'FULL LINE: "Their combined capacity accounts for 60% of Australia\u2019s entire sugar capacity."',zh:'它们的产能加起来，占了整个澳大利亚糖产能的百分之六十。',py:'T\u0101men de ch\u01cenn\u00e9ng ji\u0101 q\u01d0lai, zh\u00e0n le zh\u011bngg\u00e8 \u00c0od\u00e0l\u00ecy\u00e0 t\u00e1ng ch\u01cenn\u00e9ng de b\u01ceif\u0113nzh\u012b li\u00f9sh\u00ed.'},
+ {en:'FULL LINE: "Our brands already have over a hundred years of history."',zh:'我们的品牌已经有一百多年的历史了。',py:'W\u01d2men de p\u01d0np\u00e1i y\u01d0j\u012bng y\u01d2u y\u00ecb\u01cei du\u014d ni\u00e1n de l\u00ecsh\u01d0 le.'},
+ {en:'FULL LINE: "\u2026a JV in which we and our Saudi partners each hold half."',zh:'是我们和沙特伙伴各占一半的合资公司。',py:'Sh\u00ec w\u01d2men h\u00e9 Sh\u0101t\u00e8 hu\u01d2b\u00e0n g\u00e8 zh\u00e0n y\u00edb\u00e0n de h\u00e9z\u012b g\u014dngs\u012b.'}
+];
+let fQ3,fR3,fRev3;
+function flash3Start(){fQ3=shuffle(flashData3);fR3=0;flash3Show();}
+function flash3Show(){
+  fRev3=false;const it=fQ3[0];
+  document.getElementById('flash-front-l3').textContent=it.en;
+  document.getElementById('flash-zh-l3').style.display='none';
+  document.getElementById('flash-py-l3').style.display='none';
+  document.getElementById('flash-tap-l3').textContent='Say it aloud, then tap to reveal';
+  document.getElementById('flash-grades-l3').style.visibility='hidden';
+  document.getElementById('flash-prog-l3').textContent='Retired '+fR3+' / '+flashData3.length+' \u00b7 in queue: '+fQ3.length;
+}
+document.getElementById('flash-card-l3').onclick=()=>{
+  if(fRev3||!fQ3.length)return;
+  fRev3=true;const it=fQ3[0];
+  const zh=document.getElementById('flash-zh-l3'),py=document.getElementById('flash-py-l3');
+  zh.textContent=it.zh;py.textContent=it.py;zh.style.display='block';py.style.display='block';
+  document.getElementById('flash-tap-l3').textContent='Did you get it?';
+  document.getElementById('flash-grades-l3').style.visibility='visible';
+};
+document.getElementById('flash-say-l3').onclick=e=>{e.stopPropagation();if(fQ3.length)speak(fQ3[0].zh,null);};
+document.getElementById('flash-again-l3').onclick=()=>{if(!fRev3)return;fQ3.push(fQ3.shift());flash3Show();};
+document.getElementById('flash-got-l3').onclick=()=>{
+  if(!fRev3)return;fQ3.shift();fR3++;
+  if(fQ3.length){flash3Show();}
+  else{
+    document.getElementById('flash-front-l3').textContent='\u5b8c\u6210\u4e86\uff01Deck complete.';
+    document.getElementById('flash-zh-l3').style.display='none';
+    document.getElementById('flash-py-l3').style.display='none';
+    document.getElementById('flash-tap-l3').textContent='All '+flashData3.length+' cards retired. Same time tomorrow.';
+    document.getElementById('flash-grades-l3').style.visibility='hidden';
+    document.getElementById('flash-prog-l3').textContent='Retired '+fR3+' / '+flashData3.length;
+  }
+};
+document.getElementById('flash-restart-l3').onclick=flash3Start;
+flash3Start();
+
+const toneData3=[
+ {zh:'支柱',en:'pillar \u2014 today\u2019s five-time offender',ans:'zh\u012bzh\u00f9',opts:['zh\u012bzh\u00f9','z\u00eczh\u01d4','z\u012bzh\u00f9'],note:'Flat then falling. Not 自主 (z\u00eczh\u01d4, autonomy), not 资助 (z\u012bzh\u00f9, sponsorship). Escape hatch: 板块.'},
+ {zh:'糖蜜',en:'molasses \u2014 mind the order!',ans:'t\u00e1ngm\u00ec',opts:['t\u00e1ngm\u00ec','m\u00ect\u00e1ng','t\u0101ngm\u00ec'],note:'糖蜜 = molasses; flip it to 蜜糖 and you trade honey. Exactly two characters, order is everything.'},
+ {zh:'份额',en:'share \u2014 keep the soup away',ans:'f\u00e8n\u2019\u00e9',opts:['f\u00e8n\u2019\u00e9','f\u0113n\u2019\u00e8','f\u00e8ng\u00e9'],note:'Queenie: don\u2019t let your 汤 disturb \u2014 f\u00e8n falls, \u00e9 rises.'},
+ {zh:'占',en:'to account for \u2014 the share verb',ans:'zh\u00e0n',opts:['zh\u00e0n','zh\u01cen','zh\u0101n'],note:'Fourth tone, falling. Same sound as 站 (stand) \u2014 different character, you spotted it yourself.'},
+ {zh:'其次',en:'next, secondly',ans:'q\u00edc\u00ec',opts:['q\u00edc\u00ec','q\u01d0c\u00ed','q\u00ecc\u012b'],note:'Rising then falling.'},
+ {zh:'效率',en:'efficiency \u2014 the \u01dc lives here',ans:'xi\u00e0ol\u01dc',opts:['xi\u00e0ol\u01dc','xi\u00e1ol\u00f9','xi\u00e0ol\u00ec'],note:'l\u01dc with the umlaut vowel \u2014 round your lips like French u.'},
+ {zh:'继续',en:'to continue \u2014 drilled today',ans:'j\u00ecx\u00f9',opts:['j\u00ecx\u00f9','j\u00edx\u016b','j\u01d0x\u00fa'],note:'Both falling. Also has the \u00fc vowel in x\u00f9.'},
+ {zh:'混淆',en:'to mix up',ans:'h\u00f9nxi\u00e1o',opts:['h\u00f9nxi\u00e1o','h\u00fanxi\u00e0o','h\u016bnxi\u0101o'],note:'Falling then rising.'}
+];
+let tQ3,tD3,tL3;
+function tone3Start(){tQ3=shuffle(toneData3);tD3=0;tone3Show();}
+function tone3Show(){
+  tL3=false;const it=tQ3[0];
+  document.getElementById('tone-q-l3').textContent=it.zh;
+  document.getElementById('tone-en-l3').textContent=it.en;
+  const box=document.getElementById('tone-opts-l3');box.innerHTML='';
+  shuffle(it.opts).forEach(o=>{const b=document.createElement('button');b.className='opt';b.style.fontStyle='italic';b.textContent=o;b.onclick=()=>tone3Ans(b,o,it);box.appendChild(b);});
+  const fb=document.getElementById('tone-fb-l3');fb.textContent='';fb.className='feedback';
+  document.getElementById('tone-prog-l3').textContent='Completed '+tD3+' / '+toneData3.length;
+}
+function tone3Ans(btn,choice,it){
+  if(tL3)return;tL3=true;
+  const fb=document.getElementById('tone-fb-l3');
+  document.querySelectorAll('#tone-opts-l3 .opt').forEach(b=>{b.disabled=true;if(b.textContent===it.ans)b.classList.add('correct');});
+  if(choice===it.ans){fb.textContent='\u2713 '+it.note+' Listen and repeat.';fb.className='feedback good';tQ3.shift();tD3++;}
+  else{btn.classList.add('wrong');fb.textContent='\u2717 It\u2019s '+it.ans+'. '+it.note+' This one comes back.';fb.className='feedback bad';tQ3.push(tQ3.shift());}
+  speak(it.zh,null);
+  setTimeout(()=>{if(tQ3.length){tone3Show();}else{
+    document.getElementById('tone-q-l3').textContent='\u5b8c\u6210\u4e86\uff01';
+    document.getElementById('tone-en-l3').textContent='\u652f\u67f1 is a pillar. \u81ea\u4e3b is autonomy. Your business rests on the former.';
+    document.getElementById('tone-opts-l3').innerHTML='';document.getElementById('tone-fb-l3').textContent='';
+    document.getElementById('tone-prog-l3').textContent='Completed '+tD3+' / '+toneData3.length;
+  }},3000);
+}
+document.getElementById('tone-restart-l3').onclick=tone3Start;
+tone3Start();
+
+const ladderTexts3={
+ biz:{zh:'\u4e0b\u9762\u6211\u4f1a\u4ecb\u7ecd\u4e00\u4e0b\u6211\u4eec\u4e30\u76ca\u96c6\u56e2\u7684\u60c5\u51b5\u3002\u6211\u4eec\u4e30\u76ca\u96c6\u56e2\u7684\u7cd6\u4e1a\u52a1\u662f\u4e00\u4f53\u5316\u7684\u3002\u9996\u5148\uff0c\u6211\u4eec\u6709\u81ea\u5df1\u7684\u539f\u7cd6\u5382\u548c\u70bc\u7cd6\u5382 \u2014\u2014 \u5728\u6fb3\u5927\u5229\u4e9a\u3001\u65b0\u897f\u5170\u3001\u5370\u5c3c\u3001\u7f05\u7538\u3001\u5370\u5ea6\u548c\u6c99\u7279\u3002\u9664\u4e86\u7cd6\u5382\u4e4b\u5916\uff0c\u6211\u4eec\u7684\u603b\u90e8\u5728\u65b0\u52a0\u5761\uff1b\u5728\u745e\u58eb\u7684\u65e5\u5185\u74e6\u3001\u5df4\u897f\u7684\u5723\u4fdd\u7f57\u548c\u8fea\u62dc\u90fd\u6709\u5206\u516c\u53f8\uff1b\u5728\u6cf0\u56fd\u6709\u4ee3\u529e\u5904\u3002\u8fd9\u4e9b\u5206\u516c\u53f8\u7ecf\u9500\u6211\u4eec\u81ea\u5df1\u751f\u4ea7\u7684\u7cd6\u3002\u56e0\u4e3a\u6211\u4eec\u81ea\u6709\u7684\u8d38\u6613\u91cf\u5f88\u5927\uff0c\u4e70\u5356\u522b\u4eba\u7684\u7cd6\u4e5f\u53d8\u5f97\u5bb9\u6613 \u2014\u2014 \u6240\u4ee5\u6211\u4eec\u4e5f\u6536\u8d2d\u7b2c\u4e09\u65b9\u7684\u7cd6\uff0c\u8fdb\u884c\u8d38\u6613\u3002\u901a\u8fc7\u8d38\u6613\uff0c\u6211\u4eec\u628a\u7cd6\u5382\u548c\u5206\u516c\u53f8\u7684\u6240\u6709\u4e1a\u52a1\u8fde\u5728\u4e00\u8d77 \u2014\u2014 \u8fd9\u5c31\u662f\u4e00\u4f53\u5316\u3002\u6211\u4eec\u662f\u5168\u7403\u6700\u5927\u7684\u7cd6\u8d38\u6613\u5546\uff0c\u4e00\u5e74\u7684\u8d38\u6613\u91cf\u8fbe\u5230\u4e00\u5343\u4e8c\u767e\u4e07\u5428\u5de6\u53f3\u3002\u5728\u5df4\u897f\u3001\u6cf0\u56fd\u548c\u6fb3\u5927\u5229\u4e9a\uff0c\u6211\u4eec\u7684\u8d38\u6613\u4efd\u989d\u90fd\u662f\u7b2c\u4e00\u3002\u6211\u4eec\u4e5f\u662f\u5168\u7403\u6700\u5927\u7684\u70bc\u7cd6\u5546\u4e4b\u4e00\uff0c\u4ea7\u80fd\u8fbe\u5230\u56db\u767e\u4e94\u5341\u4e07\u5428\u5de6\u53f3\u3002\u6211\u4eec\u5728\u6fb3\u5927\u5229\u4e9a\u6709\u516b\u5904\u539f\u7cd6\u5382\u3002\u5b83\u4eec\u9664\u4e86\u751f\u4ea7\u539f\u7cd6\uff0c\u8fd8\u751f\u4ea7\u4e59\u9187\u548c\u53d1\u7535\uff1b\u4ea7\u80fd\u52a0\u8d77\u6765\uff0c\u5360\u4e86\u6574\u4e2a\u6fb3\u5927\u5229\u4e9a\u7cd6\u4ea7\u80fd\u7684\u767e\u5206\u4e4b\u516d\u5341\u3002\u6211\u4eec\u5728\u6fb3\u65b0\u3001\u6c99\u7279\u548c\u5370\u5ea6\u4e5f\u6709\u5f88\u591a\u77e5\u540d\u7684\u6d88\u8d39\u54c1\u724c\u3002',py:'Xi\u00e0mi\u00e0n w\u01d2 hu\u00ec ji\u00e8sh\u00e0o y\u00edxi\u00e0 w\u01d2men F\u0113ngy\u00ec J\u00edtu\u00e1n de q\u00edngku\u00e0ng. W\u01d2men F\u0113ngy\u00ec J\u00edtu\u00e1n de t\u00e1ng y\u00e8w\u00f9 sh\u00ec y\u00ect\u01d0hu\u00e0 de. Sh\u01d2uxi\u0101n, w\u01d2men y\u01d2u z\u00ecj\u01d0 de yu\u00e1nt\u00e1ngch\u01ceng h\u00e9 li\u00e0nt\u00e1ngch\u01ceng \u2014 z\u00e0i \u00c0od\u00e0l\u00ecy\u00e0, X\u012bnx\u012bl\u00e1n, Y\u00ecnn\u00ed, Mi\u01cendi\u00e0n, Y\u00ecnd\u00f9 h\u00e9 Sh\u0101t\u00e8. Ch\u00fale t\u00e1ngch\u01ceng zh\u012bw\u00e0i, w\u01d2men de z\u01d2ngb\u00f9 z\u00e0i X\u012bnji\u0101p\u014d; z\u00e0i Ru\u00ecsh\u00ec de R\u00ecn\u00e8iw\u01ce, B\u0101x\u012b de Sh\u00e8ngb\u01ceolu\u00f3 h\u00e9 D\u00edb\u00e0i d\u014du y\u01d2u f\u0113ng\u014dngs\u012b; z\u00e0i T\u00e0igu\u00f3 y\u01d2u d\u00e0ib\u00e0nch\u00f9. Zh\u00e8xi\u0113 f\u0113ng\u014dngs\u012b j\u012bngxi\u0101o w\u01d2men z\u00ecj\u01d0 sh\u0113ngch\u01cen de t\u00e1ng. Y\u012bnw\u00e8i w\u01d2men z\u00ecy\u01d2u de m\u00e0oy\u00ecli\u00e0ng h\u011bn d\u00e0, m\u01ceim\u00e0i bi\u00e9ren de t\u00e1ng y\u011b bi\u00e0n de r\u00f3ngy\u00ec \u2014 su\u01d2y\u01d0 w\u01d2men y\u011b sh\u014dug\u00f2u d\u00ecs\u0101nf\u0101ng de t\u00e1ng, j\u00ecnx\u00edng m\u00e0oy\u00ec. T\u014dnggu\u00f2 m\u00e0oy\u00ec, w\u01d2men b\u01ce t\u00e1ngch\u01ceng h\u00e9 f\u0113ng\u014dngs\u012b de su\u01d2y\u01d2u y\u00e8w\u00f9 li\u00e1n z\u00e0i y\u00ecq\u01d0 \u2014 zh\u00e8 ji\u00f9 sh\u00ec y\u00ect\u01d0hu\u00e0. W\u01d2men sh\u00ec qu\u00e1nqi\u00fa zu\u00ec d\u00e0 de t\u00e1ng m\u00e0oy\u00ecsh\u0101ng, y\u00ec ni\u00e1n de m\u00e0oy\u00ecli\u00e0ng d\u00e1d\u00e0o y\u00ecqi\u0101n \u00e8rb\u01cei w\u00e0n d\u016bn zu\u01d2y\u00f2u. Z\u00e0i B\u0101x\u012b, T\u00e0igu\u00f3 h\u00e9 \u00c0od\u00e0l\u00ecy\u00e0, w\u01d2men de m\u00e0oy\u00ec f\u00e8n\u2019\u00e9 d\u014du sh\u00ec d\u00ec y\u012b. W\u01d2men y\u011b sh\u00ec qu\u00e1nqi\u00fa zu\u00ec d\u00e0 de li\u00e0nt\u00e1ngsh\u0101ng zh\u012b y\u012b, ch\u01cenn\u00e9ng d\u00e1d\u00e0o s\u00ecb\u01cei w\u01d4sh\u00ed w\u00e0n d\u016bn zu\u01d2y\u00f2u. W\u01d2men z\u00e0i \u00c0od\u00e0l\u00ecy\u00e0 y\u01d2u b\u0101 ch\u00f9 yu\u00e1nt\u00e1ngch\u01ceng. T\u0101men ch\u00fale sh\u0113ngch\u01cen yu\u00e1nt\u00e1ng, h\u00e1i sh\u0113ngch\u01cen y\u01d0ch\u00fan h\u00e9 f\u0101di\u00e0n; ch\u01cenn\u00e9ng ji\u0101 q\u01d0lai, zh\u00e0n le zh\u011bngg\u00e8 \u00c0od\u00e0l\u00ecy\u00e0 t\u00e1ng ch\u01cenn\u00e9ng de b\u01ceif\u0113nzh\u012b li\u00f9sh\u00ed. W\u01d2men z\u00e0i \u00c0ox\u012bn, Sh\u0101t\u00e8 h\u00e9 Y\u00ecnd\u00f9 y\u011b y\u01d2u h\u011bn du\u014d zh\u012bm\u00edng de xi\u0101of\u00e8i p\u01d0np\u00e1i.',sk:'\u4e0b\u9762\u6211\u4f1a\u4ecb\u7ecd\u2026\u60c5\u51b5\u2026\u2026 \u4e00\u4f53\u5316\u2026\u2026 \u9996\u5148 \u00b7 \u539f\u7cd6\u5382\u548c\u70bc\u7cd6\u5382 \u00b7 \u516d\u56fd\u2026\u2026 \u603b\u90e8\u65b0\u52a0\u5761 \u00b7 \u745e\u58eb\u7684\u65e5\u5185\u74e6 \u00b7 \u5df4\u897f\u7684\u5723\u4fdd\u7f57 \u00b7 \u8fea\u62dc \u00b7 \u6cf0\u56fd\u4ee3\u529e\u5904\u2026\u2026 \u7ecf\u9500\u81ea\u5df1\u7684\u7cd6 \u00b7 \u81ea\u6709\u91cf\u5927 \u00b7 \u53d8\u5f97\u5bb9\u6613 \u00b7 \u6536\u8d2d\u7b2c\u4e09\u65b9 \u00b7 \u8fdb\u884c\u8d38\u6613\u2026\u2026 \u901a\u8fc7\u8d38\u6613 \u00b7 \u8fde\u5728\u4e00\u8d77 \u00b7 \u8fd9\u5c31\u662f\u4e00\u4f53\u5316\u2026\u2026 \u6700\u5927\u8d38\u6613\u5546 \u00b7 \u4e00\u5343\u4e8c\u767e\u4e07\u5428\u5de6\u53f3\u2026\u2026 \u5df4\u897f\u6cf0\u56fd\u6fb3\u5927\u5229\u4e9a \u00b7 \u4efd\u989d\u7b2c\u4e00\u2026\u2026 \u70bc\u7cd6\u5546\u4e4b\u4e00 \u00b7 \u56db\u767e\u4e94\u5341\u4e07\u5428\u2026\u2026 \u516b\u5904\u539f\u7cd6\u5382 \u00b7 \u9664\u4e86\u2026\u8fd8\u2026 \u00b7 \u53d1\u7535 \u00b7 \u52a0\u8d77\u6765 \u00b7 \u5360\u4e86\u2026\u767e\u5206\u4e4b\u516d\u5341\u2026\u2026 \u6fb3\u65b0\u6c99\u7279\u5370\u5ea6 \u00b7 \u77e5\u540d\u6d88\u8d39\u54c1\u724c'},
+ pil:{zh:'\u5927\u5bb6\u8bf7\u770b\u8fd9\u4e2aPPT\u3002\u6211\u4eec\u7684\u7cd6\u4e1a\u52a1\u6709\u4e94\u5927\u652f\u67f1\u3002\u9996\u5148\uff0c\u4e30\u76ca\u7cd6\u4e1a\u79c1\u4eba\u6709\u9650\u516c\u53f8\u662f\u6211\u4eec\u7684\u8d38\u6613\u516c\u53f8\uff0c\u603b\u90e8\u5728\u65b0\u52a0\u5761\u3002\u6211\u4eec\u505a\u539f\u7cd6\u3001\u767d\u7cd6\u548c\u7cd6\u871c\u7684\u8d38\u6613\u3002\u6211\u4eec\u662f\u5168\u7403\u6700\u5927\u7684\u7cd6\u8d38\u6613\u5546\uff0c\u5e02\u573a\u4efd\u989d\u5927\u7ea6\u5360\u767e\u5206\u4e4b\u4e09\u5341\u3002\u6211\u4eec\u5728\u8fea\u62dc\u3001\u65e5\u5185\u74e6\u548c\u5723\u4fdd\u7f57\u90fd\u6709\u5206\u516c\u53f8\u3002\u5728\u5df4\u897f\u3001\u6cf0\u56fd\u548c\u6fb3\u5927\u5229\u4e9a\uff0c\u6211\u4eec\u662f\u6700\u5927\u7684\u4e70\u5bb6\u3002\u5176\u6b21\u662f\u6fb3\u65b0\u3002\u6211\u4eec\u5728\u6fb3\u5927\u5229\u4e9a\u6709\u516b\u5bb6\u539f\u7cd6\u5382\uff0c\u751f\u4ea7\u6fb3\u5927\u5229\u4e9a\u4e00\u534a\u4ee5\u4e0a\u7684\u539f\u7cd6\uff0c\u4e5f\u751f\u4ea7\u4e59\u9187\u548c\u53ef\u518d\u751f\u7535\u529b\u3002\u540c\u65f6\uff0c\u6211\u4eec\u8fd8\u6709\u4e09\u5bb6\u70bc\u7cd6\u5382\uff1a\u4e24\u5bb6\u5728\u6fb3\u5927\u5229\u4e9a\uff0c\u4e00\u5bb6\u5728\u65b0\u897f\u5170\u3002\u5e02\u573a\u4efd\u989d\u5728\u6fb3\u5927\u5229\u4e9a\u5927\u7ea6\u5360\u767e\u5206\u4e4b\u516d\u5341\uff0c\u65b0\u897f\u5170\u63a5\u8fd1\u767e\u5206\u4e4b\u4e5d\u5341\u3002\u6211\u4eec\u7684\u54c1\u724c\u5df2\u7ecf\u6709\u4e00\u767e\u591a\u5e74\u7684\u5386\u53f2\u4e86\u3002\u7b2c\u4e09\u662f\u5370\u5c3c\uff1a\u6211\u4eec\u6709\u4e24\u5bb6\u70bc\u7cd6\u5382\uff0c\u5e02\u573a\u4efd\u989d\u5927\u7ea6\u5360\u5f53\u5730\u7684\u767e\u5206\u4e4b\u5341\u4e94\u3002\u7b2c\u56db\u662f\u5370\u5ea6\u3002\u6211\u4eec\u6709\u516b\u5bb6\u7cd6\u5382\u548c\u4e24\u5bb6\u70bc\u7cd6\u5382\u3002\u574e\u5fb7\u62c9\u7684\u70bc\u7cd6\u5382\u662f\u4e16\u754c\u4e0a\u6548\u7387\u6700\u9ad8\u7684\u4e4b\u4e00\u3002\u6211\u4eec\u7684\u7cd6\u5382\u751f\u4ea7\u7cd6\u3001\u4e59\u9187\u548c\u7535\u529b\u3002\u6211\u4eec\u7cd6\u7684\u54c1\u724c\u662f\u5370\u5ea6\u7b2c\u4e00\u7684\u54c1\u724c\u3002\u6700\u540e\u662f\u6c99\u7279\u7684Durrah \u2014\u2014 \u4e00\u5bb6\u70bc\u7cd6\u5382\uff0c\u662f\u6211\u4eec\u548c\u6c99\u7279\u4f19\u4f34\u5404\u5360\u4e00\u534a\u7684\u5408\u8d44\u516c\u53f8\u3002\u5e02\u573a\u4efd\u989d\u5927\u7ea6\u5360\u5f53\u5730\u7684\u767e\u5206\u4e4b\u516d\u5341\u3002',py:'D\u00e0ji\u0101 q\u01d0ng k\u00e0n zh\u00e8 ge PPT. W\u01d2men de t\u00e1ng y\u00e8w\u00f9 y\u01d2u w\u01d4 d\u00e0 zh\u012bzh\u00f9. Sh\u01d2uxi\u0101n, F\u0113ngy\u00ec T\u00e1ngy\u00e8 S\u012br\u00e9n Y\u01d2uxi\u00e0n G\u014dngs\u012b sh\u00ec w\u01d2men de m\u00e0oy\u00ec g\u014dngs\u012b, z\u01d2ngb\u00f9 z\u00e0i X\u012bnji\u0101p\u014d. W\u01d2men zu\u00f2 yu\u00e1nt\u00e1ng, b\u00e1it\u00e1ng h\u00e9 t\u00e1ngm\u00ec de m\u00e0oy\u00ec. W\u01d2men sh\u00ec qu\u00e1nqi\u00fa zu\u00ec d\u00e0 de t\u00e1ng m\u00e0oy\u00ecsh\u0101ng, sh\u00ecch\u01ceng f\u00e8n\u2019\u00e9 d\u00e0yu\u0113 zh\u00e0n b\u01ceif\u0113nzh\u012b s\u0101nsh\u00ed. W\u01d2men z\u00e0i D\u00edb\u00e0i, R\u00ecn\u00e8iw\u01ce h\u00e9 Sh\u00e8ngb\u01ceolu\u00f3 d\u014du y\u01d2u f\u0113ng\u014dngs\u012b. Z\u00e0i B\u0101x\u012b, T\u00e0igu\u00f3 h\u00e9 \u00c0od\u00e0l\u00ecy\u00e0, w\u01d2men sh\u00ec zu\u00ec d\u00e0 de m\u01ceiji\u0101. Q\u00edc\u00ec sh\u00ec \u00c0ox\u012bn. W\u01d2men z\u00e0i \u00c0od\u00e0l\u00ecy\u00e0 y\u01d2u b\u0101 ji\u0101 yu\u00e1nt\u00e1ngch\u01ceng, sh\u0113ngch\u01cen \u00c0od\u00e0l\u00ecy\u00e0 y\u00edb\u00e0n y\u01d0sh\u00e0ng de yu\u00e1nt\u00e1ng, y\u011b sh\u0113ngch\u01cen y\u01d0ch\u00fan h\u00e9 k\u011bz\u00e0ish\u0113ng di\u00e0nl\u00ec. T\u00f3ngsh\u00ed, w\u01d2men h\u00e1i y\u01d2u s\u0101n ji\u0101 li\u00e0nt\u00e1ngch\u01ceng: li\u01ceng ji\u0101 z\u00e0i \u00c0od\u00e0l\u00ecy\u00e0, y\u00ec ji\u0101 z\u00e0i X\u012bnx\u012bl\u00e1n. Sh\u00ecch\u01ceng f\u00e8n\u2019\u00e9 z\u00e0i \u00c0od\u00e0l\u00ecy\u00e0 d\u00e0yu\u0113 zh\u00e0n b\u01ceif\u0113nzh\u012b li\u00f9sh\u00ed, X\u012bnx\u012bl\u00e1n ji\u0113j\u00ecn b\u01ceif\u0113nzh\u012b ji\u01d4sh\u00ed. W\u01d2men de p\u01d0np\u00e1i y\u01d0j\u012bng y\u01d2u y\u00ecb\u01cei du\u014d ni\u00e1n de l\u00ecsh\u01d0 le. D\u00ec s\u0101n sh\u00ec Y\u00ecnn\u00ed: w\u01d2men y\u01d2u li\u01ceng ji\u0101 li\u00e0nt\u00e1ngch\u01ceng, sh\u00ecch\u01ceng f\u00e8n\u2019\u00e9 d\u00e0yu\u0113 zh\u00e0n d\u0101ngd\u00ec de b\u01ceif\u0113nzh\u012b sh\u00edw\u01d4. D\u00ec s\u00ec sh\u00ec Y\u00ecnd\u00f9. W\u01d2men y\u01d2u b\u0101 ji\u0101 t\u00e1ngch\u01ceng h\u00e9 li\u01ceng ji\u0101 li\u00e0nt\u00e1ngch\u01ceng. K\u01cend\u00e9l\u0101 de li\u00e0nt\u00e1ngch\u01ceng sh\u00ec sh\u00ecji\u00e8 shang xi\u00e0ol\u01dc zu\u00ec g\u0101o de zh\u012b y\u012b. W\u01d2men de t\u00e1ngch\u01ceng sh\u0113ngch\u01cen t\u00e1ng, y\u01d0ch\u00fan h\u00e9 di\u00e0nl\u00ec. W\u01d2men t\u00e1ng de p\u01d0np\u00e1i sh\u00ec Y\u00ecnd\u00f9 d\u00ec y\u012b de p\u01d0np\u00e1i. Zu\u00ech\u00f2u sh\u00ec Sh\u0101t\u00e8 de Durrah \u2014 y\u00ec ji\u0101 li\u00e0nt\u00e1ngch\u01ceng, sh\u00ec w\u01d2men h\u00e9 Sh\u0101t\u00e8 hu\u01d2b\u00e0n g\u00e8 zh\u00e0n y\u00edb\u00e0n de h\u00e9z\u012b g\u014dngs\u012b. Sh\u00ecch\u01ceng f\u00e8n\u2019\u00e9 d\u00e0yu\u0113 zh\u00e0n d\u0101ngd\u00ec de b\u01ceif\u0113nzh\u012b li\u00f9sh\u00ed.',sk:'PPT \u00b7 \u4e94\u5927\u652f\u67f1\u2026\u2026 \u9996\u5148 \u00b7 \u79c1\u4eba\u6709\u9650\u516c\u53f8\u662f\u8d38\u6613\u516c\u53f8 \u00b7 \u603b\u90e8\u65b0\u52a0\u5761 \u00b7 \u539f\u7cd6\u767d\u7cd6\u7cd6\u871c \u00b7 \u5927\u7ea6\u5360\u767e\u5206\u4e4b\u4e09\u5341 \u00b7 \u8fea\u62dc\u65e5\u5185\u74e6\u5723\u4fdd\u7f57 \u00b7 \u6700\u5927\u7684\u4e70\u5bb6\u2026\u2026 \u5176\u6b21\u6fb3\u65b0 \u00b7 \u516b\u5bb6\u539f\u7cd6\u5382 \u00b7 \u4e00\u534a\u4ee5\u4e0a \u00b7 \u4e59\u9187\u53ef\u518d\u751f\u7535\u529b \u00b7 \u540c\u65f6\u4e09\u5bb6\u70bc\u7cd6\u5382 \u00b7 \u4e24\u5bb6\u4e00\u5bb6 \u00b7 \u5927\u7ea6\u5360\u516d\u5341 \u00b7 \u63a5\u8fd1\u4e5d\u5341 \u00b7 \u5df2\u7ecf\u4e00\u767e\u591a\u5e74\u4e86\u2026\u2026 \u7b2c\u4e09\u5370\u5c3c \u00b7 \u4e24\u5bb6 \u00b7 \u5f53\u5730\u7684\u5341\u4e94\u2026\u2026 \u7b2c\u56db\u5370\u5ea6 \u00b7 \u516b\u52a0\u4e24 \u00b7 \u574e\u5fb7\u62c9\u6548\u7387 \u00b7 \u7cd6\u4e59\u9187\u7535\u529b \u00b7 \u7b2c\u4e00\u54c1\u724c\u2026\u2026 \u6700\u540e\u6c99\u7279 \u00b7 \u5404\u5360\u4e00\u534a \u00b7 \u5f53\u5730\u7684\u516d\u5341'}
+};
+let ladKey3='biz',ladStep3=0;
+const ladderNotes3=[
+ 'Rung 1 \u2014 read aloud with full support. Every 占 falls; every 支 stays flat.',
+ 'Rung 2 \u2014 pinyin removed. Character recognition carries you.',
+ 'Rung 3 \u2014 performance pace, with the 首先/其次 spine doing the counting for you.',
+ 'Rung 4 \u2014 skeleton only. Smooth twice in a row = ready for the room.'
+];
+function ladder3Show(step){
+  ladStep3=step;
+  document.querySelectorAll('.lstep3').forEach(b=>b.classList.toggle('active',+b.dataset.step===step));
+  const t=ladderTexts3[ladKey3];
+  const zh=document.getElementById('ladder-zh-l3'),py=document.getElementById('ladder-py-l3');
+  if(step===3){zh.textContent=t.sk;py.textContent='';}
+  else{zh.textContent=t.zh;py.textContent=(step===0)?t.py:'';}
+  document.getElementById('ladder-note-l3').textContent=ladderNotes3[step];
+}
+function ladder3Pick(k){
+  ladKey3=k;
+  document.getElementById('lad3-biz').setAttribute('aria-pressed',k==='biz'?'true':'false');
+  document.getElementById('lad3-pil').setAttribute('aria-pressed',k==='pil'?'true':'false');
+  ladder3Show(ladStep3);
+}
+document.getElementById('lad3-biz').onclick=()=>ladder3Pick('biz');
+document.getElementById('lad3-pil').onclick=()=>ladder3Pick('pil');
+document.getElementById('ladder-say-l3').onclick=()=>{speak(document.getElementById('ladder-zh-l3').textContent,null);};
+document.querySelectorAll('.lstep3').forEach(b=>b.onclick=()=>ladder3Show(+b.dataset.step));
+ladder3Show(0);
 
 </script>
 
