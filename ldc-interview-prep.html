@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>预习 · 联合早报 LDC 专访 · Kwek Ju-Yang</title>
+<style>
+  :root{
+    --ink:#2b2f33; --ink-soft:#5a6169;
+    --steel:#4a6d8c; --steel-deep:#3a5570; --steel-wash:#eef3f7;
+    --line:#dde4ea; --paper:#ffffff; --paper-warm:#fafbfc;
+    --gold:#b08d4f; --good:#4a7c59; --bad:#a05252;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    color:var(--ink);background:var(--paper);line-height:1.6;font-size:16px;}
+  .zh{font-family:"Songti SC","Noto Serif SC","SimSun","STSong",serif;}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px;}
+
+  header{border-bottom:1px solid var(--line);padding:52px 0 38px;
+    background:linear-gradient(180deg,var(--steel-wash) 0%,var(--paper) 100%);}
+  .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:14px;}
+  h1{font-weight:700;font-size:clamp(25px,4.5vw,36px);line-height:1.25;letter-spacing:-.01em;}
+  h1 .zh{color:var(--steel-deep);}
+  .sub{color:var(--ink-soft);margin-top:12px;font-size:15px;max-width:620px;}
+  .level-note{margin-top:20px;display:inline-block;background:var(--paper);border:1px solid var(--line);
+    border-left:3px solid var(--gold);padding:10px 16px;border-radius:0 6px 6px 0;
+    font-size:13.5px;color:var(--ink-soft);max-width:660px;}
+
+  section{padding:44px 0 8px;}
+  h2{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--steel);font-weight:700;
+    display:flex;align-items:center;gap:12px;margin-bottom:24px;}
+  h2::after{content:"";flex:1;height:1px;background:var(--line);}
+
+  .controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;}
+  .toggle{font-size:13px;font-weight:600;color:var(--steel-deep);background:var(--steel-wash);
+    border:1px solid var(--line);border-radius:20px;padding:7px 16px;cursor:pointer;transition:background .15s;}
+  .toggle:hover{background:#e2ebf2;}
+  .toggle[aria-pressed="false"]{background:var(--paper);color:var(--ink-soft);}
+  .toggle:focus-visible,button:focus-visible{outline:2px solid var(--steel);outline-offset:2px;}
+  .hint{font-size:12.5px;color:var(--ink-soft);align-self:center;}
+  .say{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;
+    border-radius:50%;border:1px solid var(--line);background:var(--steel-wash);color:var(--steel-deep);
+    cursor:pointer;font-size:13px;margin-left:10px;vertical-align:middle;flex:0 0 auto;transition:background .15s;}
+  .say:hover{background:#dfe9f1;}
+  .say.playing{background:var(--steel-deep);color:#fff;border-color:var(--steel-deep);}
+
+  .line{padding:20px 0 18px;border-bottom:1px solid var(--line);}
+  .line:last-child{border-bottom:none;}
+  .line-num{font-size:11px;color:var(--steel);font-weight:700;letter-spacing:.1em;margin-bottom:6px;}
+  .hanzi{font-size:clamp(21px,3.6vw,27px);line-height:1.7;font-weight:600;}
+  .pinyin{font-size:15px;color:var(--steel-deep);margin-top:6px;font-style:italic;}
+  .english{font-size:14.5px;color:var(--ink-soft);margin-top:6px;}
+  body.hide-pinyin .pinyin{display:none;}
+  body.hide-english .english{display:none;}
+  .why{margin-top:13px;background:var(--paper-warm);border:1px solid var(--line);border-radius:8px;
+    padding:13px 16px;font-size:14px;}
+  .why b{color:var(--steel-deep);}
+  .why .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--gold);margin-bottom:5px;}
+
+  .flow-card{background:var(--steel-wash);border:1px solid var(--line);border-radius:10px;padding:26px;margin-top:4px;}
+  .flow-card .hanzi{font-size:clamp(18px,3vw,22px);line-height:2;}
+  .flow-note{font-size:13px;color:var(--ink-soft);margin-top:12px;}
+
+  table{width:100%;border-collapse:collapse;font-size:14.5px;}
+  th{text-align:left;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);
+    font-weight:700;padding:10px 12px;border-bottom:2px solid var(--steel);}
+  td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top;}
+  td.zh{font-size:18px;font-weight:600;white-space:nowrap;}
+  td.py{color:var(--steel-deep);font-style:italic;white-space:nowrap;}
+  td.note{color:var(--ink-soft);font-size:13.5px;}
+  tr:hover td{background:var(--paper-warm);}
+
+  /* ===== PRACTICE ===== */
+  .ped-note{background:var(--paper-warm);border:1px solid var(--line);border-radius:8px;
+    padding:14px 16px;font-size:13.5px;color:var(--ink-soft);margin-bottom:22px;}
+  .ped-note b{color:var(--steel-deep);}
+
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px;}
+  .tab{font-size:13.5px;font-weight:600;padding:9px 16px;border-radius:8px;cursor:pointer;
+    border:1px solid var(--line);background:var(--paper);color:var(--ink-soft);transition:all .15s;}
+  .tab.active{background:var(--steel-deep);border-color:var(--steel-deep);color:#fff;}
+  .mode{display:none;}
+  .mode.active{display:block;}
+
+  .card{border:1px solid var(--line);border-radius:10px;padding:24px;background:var(--paper);}
+  .mode-desc{font-size:13px;color:var(--ink-soft);margin-bottom:18px;}
+  .mode-desc b{color:var(--gold);font-size:11px;letter-spacing:.1em;text-transform:uppercase;}
+
+  .q-hanzi{font-size:clamp(20px,3.4vw,26px);font-weight:600;line-height:1.8;margin-bottom:6px;}
+  .q-sub{font-size:14px;color:var(--ink-soft);margin-bottom:18px;}
+  .blank{display:inline-block;min-width:76px;border-bottom:2px solid var(--steel);text-align:center;color:var(--steel);}
+
+  .opts{display:flex;gap:10px;flex-wrap:wrap;}
+  .opt{font-size:17px;font-weight:600;padding:10px 20px;border-radius:8px;cursor:pointer;
+    border:1.5px solid var(--line);background:var(--paper);transition:all .12s;}
+  .opt:hover{border-color:var(--steel);background:var(--steel-wash);}
+  .opt.correct{border-color:var(--good);background:#eef5f0;color:var(--good);}
+  .opt.wrong{border-color:var(--bad);background:#f7eeee;color:var(--bad);}
+  .opt:disabled{cursor:default;}
+
+  .feedback{margin-top:14px;font-size:14px;min-height:22px;}
+  .feedback.good{color:var(--good);}
+  .feedback.bad{color:var(--bad);}
+
+  .nav-row{display:flex;justify-content:space-between;align-items:center;margin-top:20px;}
+  .btn{font-size:13.5px;font-weight:600;padding:9px 18px;border-radius:8px;cursor:pointer;
+    border:1px solid var(--steel-deep);background:var(--steel-deep);color:#fff;transition:opacity .15s;}
+  .btn:hover{opacity:.9;}
+  .btn.ghost{background:var(--paper);color:var(--steel-deep);}
+  .progress{font-size:12.5px;color:var(--ink-soft);}
+
+  /* builder */
+  .pool,.answer-row{display:flex;gap:8px;flex-wrap:wrap;min-height:52px;}
+  .answer-row{border:1.5px dashed var(--line);border-radius:8px;padding:8px;margin-bottom:14px;background:var(--paper-warm);}
+  .chip{font-size:18px;font-weight:600;padding:8px 14px;border-radius:8px;cursor:pointer;
+    border:1.5px solid var(--line);background:var(--paper);transition:all .12s;}
+  .chip:hover{border-color:var(--steel);background:var(--steel-wash);}
+  .answer-row .chip{background:var(--steel-wash);border-color:var(--steel);}
+  .answer-row.done-good{border-color:var(--good);background:#eef5f0;}
+  .answer-row.done-bad{border-color:var(--bad);background:#f7eeee;}
+
+  /* flashcards */
+  .flash{border:1.5px solid var(--line);border-radius:12px;padding:40px 24px;text-align:center;
+    cursor:pointer;background:var(--paper-warm);margin-bottom:16px;min-height:170px;
+    display:flex;flex-direction:column;justify-content:center;gap:8px;}
+  .flash .front-en{font-size:19px;font-weight:600;}
+  .flash .back-zh{font-size:30px;font-weight:700;color:var(--steel-deep);}
+  .flash .back-py{font-size:16px;font-style:italic;color:var(--steel);}
+  .flash .tap{font-size:12px;color:var(--ink-soft);letter-spacing:.08em;text-transform:uppercase;margin-top:8px;}
+  .grade-row{display:flex;gap:12px;justify-content:center;}
+  .btn.again{background:var(--paper);border-color:var(--bad);color:var(--bad);}
+  .btn.got{background:var(--good);border-color:var(--good);}
+
+  /* ladder */
+  .ladder-steps{display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap;}
+  .lstep{flex:1;min-width:110px;font-size:12px;font-weight:600;text-align:center;padding:8px 6px;
+    border-radius:6px;border:1px solid var(--line);color:var(--ink-soft);cursor:pointer;background:var(--paper);}
+  .lstep.active{background:var(--steel-deep);color:#fff;border-color:var(--steel-deep);}
+  .ladder-text{font-size:clamp(19px,3.2vw,23px);line-height:2.1;font-weight:600;}
+  .ladder-py{font-size:14px;font-style:italic;color:var(--steel-deep);margin-top:10px;line-height:1.9;}
+  .ladder-note{font-size:13px;color:var(--ink-soft);margin-top:14px;}
+
+  .tips{display:grid;gap:14px;}
+  .tip{border:1px solid var(--line);border-radius:8px;padding:15px 18px;background:var(--paper);}
+  .tip b{color:var(--steel-deep);}
+
+
+
+
+  /* lesson tabs (one per class) */
+  .lesson-tabs{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:26px;}
+  .lt-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--steel);font-weight:700;}
+  .lesson-tab{font-size:13.5px;font-weight:700;padding:9px 18px;border-radius:9px 9px 0 0;cursor:pointer;
+    border:1px solid var(--line);border-bottom:none;background:var(--paper);color:var(--ink-soft);transition:all .15s;}
+  .lesson-tab.active{background:var(--steel-deep);border-color:var(--steel-deep);color:#fff;}
+  .lesson-tab:hover:not(.active){background:var(--steel-wash);}
+  .lesson-pane{display:none;}
+  .lesson-pane.active{display:block;}
+  /* stumble chunk breakdowns */
+  .chunk-card{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:16px;background:#fff;}
+  .chunk-phrase{font-size:20px;font-weight:700;line-height:1.5;}
+  .chunk-py{font-size:13px;font-style:italic;color:var(--steel-deep);margin:2px 0 8px;}
+  .chunk-stumble{font-size:12.5px;color:#a05515;background:#fdf3e3;padding:7px 11px;border-radius:8px;margin:8px 0 10px;}
+  .chunk-row{display:grid;grid-template-columns:minmax(96px,auto) 150px 1fr;gap:12px;padding:7px 0;border-top:1px dashed var(--line);font-size:13.5px;align-items:baseline;}
+  .chunk-row .cz{font-size:16px;font-weight:700;}
+  .chunk-row .cp{font-style:italic;color:var(--steel-deep);}
+  @media(max-width:560px){.chunk-row{grid-template-columns:1fr;gap:2px;}}
+  /* clarified-word highlight */
+  tr.clar td{background:#fbf3df;}
+  .star{color:var(--gold);font-weight:800;margin-right:4px;}
+  /* benchmark assessment */
+  .assess{margin-top:16px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:18px 20px;max-width:700px;}
+  .assess-h{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--steel);font-weight:700;margin-bottom:10px;}
+  .assess-overall{font-size:15px;margin-bottom:14px;}
+  .assess-overall b{color:var(--steel-deep);}
+  .arow{display:grid;grid-template-columns:140px 170px 1fr;gap:12px;padding:9px 0;border-top:1px solid var(--line);font-size:13.5px;align-items:baseline;}
+  .arow .sk{font-weight:700;color:var(--ink);}
+  .arow .gr{font-weight:700;color:var(--steel-deep);white-space:normal;overflow-wrap:break-word;}
+  .arow .gr .pys{display:block;font-size:11px;font-style:italic;font-weight:600;color:var(--steel);margin-top:2px;}
+  .arow .ev{color:var(--ink-soft);}
+  .assess-caveat{margin-top:12px;font-size:12.5px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:10px;}
+  @media (max-width:560px){.arow{grid-template-columns:1fr;gap:2px;}}
+  /* section banners & lesson meta */
+  .part{display:flex;align-items:baseline;gap:14px;margin:70px 0 4px;padding-top:26px;border-top:3px solid var(--steel-deep);}
+  .part-num{font-size:13px;font-weight:800;color:var(--gold);letter-spacing:.15em;}
+  .part-title{font-size:21px;font-weight:800;color:var(--steel-deep);}
+  .part-title .zh{margin-right:8px;}
+  .lesson-meta{margin-top:24px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:grid;gap:9px;max-width:700px;}
+  .lm-row{display:flex;gap:12px;font-size:14.5px;align-items:baseline;}
+  .lm-k{min-width:104px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);font-weight:700;}
+  .lm-v{color:var(--ink);}
+  .lm-nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;}
+  .lm-nav a{font-size:12.5px;font-weight:600;color:var(--steel-deep);background:var(--steel-wash);border:1px solid var(--line);border-radius:16px;padding:5px 13px;text-decoration:none;}
+  .lm-nav a:hover{background:#e2ebf2;}
+  footer{margin-top:56px;padding:26px 0 48px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-soft);}
+  @media (max-width:600px){.vocab-scroll{overflow-x:auto;}table{min-width:560px;}}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+</style>
+<style>.lesson-pane{display:block !important;}</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">WILMAR INTERNATIONAL · 丰益国际 · TOPIC PAGE 02</div>
+  <h1><span class="zh">预习</span> — Zaobao / LDC Interview Prep</h1>
+  <div class="sub">Standalone topic page. Source: 联合早报 interview with Louis Dreyfus Company’s Chief Commercial Officer for Asia. Companion to the main lesson record.</div>
+</header>
+  <div class="lesson-pane" style="display:block" id="pane-prep-zaobao">
+    <div class="lesson-meta">
+      <div class="lm-row"><span class="lm-k">Module</span><span class="lm-v"><b>Prep module — not a lesson record.</b> Source: 联合早报 interview with Louis Dreyfus Company’s Chief Commercial Officer for Asia (周学军), on LDC’s Singapore-anchored Asian expansion.</span></div>
+      <div class="lm-row"><span class="lm-k">Purpose</span><span class="lm-v">Raw material for Lessons 5–6, proposed to Queenie on Sunday: vocabulary harvest, three chunked sentences, a mock-interview kit, and one read-aloud paragraph. She corrects; this page proposes.</span></div>
+      <div class="lm-row"><span class="lm-k">Calibration</span><span class="lm-v">The article is B2–C1 journalism — one band above current level. Use it as a quarry, not a text to master: harvest chunks, don’t memorise pages.</span></div>
+      <div class="lm-row"><span class="lm-k">Data flag</span><span class="lm-v">Sentences marked 原文 were transcribed from a photo of newsprint; verify wording against the article before treating any as exact. Figures (headcount, dates) unverified.</span></div>
+    </div>
+
+  <div class="part"><span class="part-num">PREP 1</span><span class="part-title"><span class="zh">词汇采集</span>Vocabulary harvest — the executive lexicon</span></div>
+
+  <section>
+    <div class="ped-note"><b>Why these twenty:</b> this is the professional register your word bank hasn’t reached yet — the words a PRC journalist, banker or counterpart uses <i>about</i> your industry. Several slot directly into your existing scripts; the notes say where.</div>
+    <div class="vocab-scroll">
+      <table>
+        <thead><tr><th>Chinese</th><th>Pinyin</th><th>English</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td class="zh">大宗商品</td><td class="py">dàzōng shāngpǐn</td><td>commodities</td><td class="note">The actual name of your industry: 农业大宗商品 = agri-commodities. Belongs in your self-intro eventually.</td></tr>
+          <tr><td class="zh">供应链</td><td class="py">gōngyìngliàn</td><td>supply chain</td><td class="note">Sibling of your 源头供应商 — 链 = chain.</td></tr>
+          <tr><td class="zh">价值链</td><td class="py">jiàzhíliàn</td><td>value chain</td><td class="note">从农场到餐桌的整个价值链 — farm to table, the native rendering of your 一体化 story.</td></tr>
+          <tr><td class="zh">环环相扣</td><td class="py">huánhuán xiāngkòu</td><td>each link interlocking</td><td class="note">The idiom of integration — see the read-aloud paragraph below. Four characters that say your whole thesis.</td></tr>
+          <tr><td class="zh">粮食安全</td><td class="py">liángshi ānquán</td><td>food security</td><td class="note">The frame every China destination-market conversation lives inside. 粮商 = grain trader.</td></tr>
+          <tr><td class="zh">首席商务官</td><td class="py">shǒuxí shāngwùguān</td><td>Chief Commercial Officer</td><td class="note">首席 + role builds the C-suite: 首席执行官 CEO, 首席财务官 CFO.</td></tr>
+          <tr><td class="zh">农产品</td><td class="py">nóngchǎnpǐn</td><td>agricultural products</td><td class="note">Umbrella above 糖; pairs with 食品 (food products).</td></tr>
+          <tr><td class="zh">谷物 / 油籽</td><td class="py">gǔwù / yóuzǐ</td><td>grains / oilseeds</td><td class="note">LDC’s and Wilmar’s other half — 益海嘉里 talk needs 油籽.</td></tr>
+          <tr><td class="zh">咖啡 / 棉花</td><td class="py">kāfēi / miánhuā</td><td>coffee / cotton</td><td class="note">Softs beyond sugar — for describing diversified competitors.</td></tr>
+          <tr><td class="zh">韧性</td><td class="py">rènxìng</td><td>resilience</td><td class="note">供应链的韧性 — post-2020 boardroom Chinese; expect it in every strategy discussion.</td></tr>
+          <tr><td class="zh">多元化</td><td class="py">duōyuánhuà</td><td>diversification</td><td class="note">Your friend 化 again: 多元 (plural) + 化. 收入多元化 = revenue diversification.</td></tr>
+          <tr><td class="zh">高附加值</td><td class="py">gāo fùjiāzhí</td><td>high value-added</td><td class="note">高附加值产品 — the downstream argument, from mills to brands.</td></tr>
+          <tr><td class="zh">垂直整合</td><td class="py">chuízhí zhěnghé</td><td>vertical integration</td><td class="note">The formal term behind your 一体化 — recognise both; speak the one you own.</td></tr>
+          <tr><td class="zh">风险管理</td><td class="py">fēngxiǎn guǎnlǐ</td><td>risk management</td><td class="note">Your previous decade, in two words. Goes straight into the career-arc answer below.</td></tr>
+          <tr><td class="zh">转换跑道</td><td class="py">zhuǎnhuàn pǎodào</td><td>to switch (career) tracks</td><td class="note">Literally "change running lanes" — the headline’s verb for the CCO’s teacher-to-trader arc; equally yours, Bain-to-trading.</td></tr>
+          <tr><td class="zh">大展拳脚</td><td class="py">dà zhǎn quánjiǎo</td><td>to flex one’s muscles, go big</td><td class="note">From the headline: 在…交易大展拳脚 — making one’s mark in trading.</td></tr>
+          <tr><td class="zh">梦寐以求</td><td class="py">mèngmèi yǐ qiú</td><td>dreamed-of, long sought</td><td class="note">His answer on the career leap — a set phrase that lands warmly in interviews.</td></tr>
+          <tr><td class="zh">创新</td><td class="py">chuàngxīn</td><td>innovation</td><td class="note">农业食品创新 — the Singapore-hub pitch; 创新实验室 = innovation lab.</td></tr>
+          <tr><td class="zh">生态系统</td><td class="py">shēngtài xìtǒng</td><td>ecosystem</td><td class="note">Business-speak import, used exactly as in English boardrooms.</td></tr>
+          <tr><td class="zh">终端消费者</td><td class="py">zhōngduān xiāofèizhě</td><td>end consumer</td><td class="note">终端 = terminal/end — the far end of your 价值链, and where your 消费品牌 live.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="part"><span class="part-num">PREP 2</span><span class="part-title"><span class="zh">难句拆解</span>Three sentences from the article, chunked</span></div>
+
+  <section>
+    <div class="ped-note"><b>Same method as the Lesson 4 stumble clinic,</b> applied upward: three sentences a band above your level, dismantled so the machinery shows. Master the chunks and the register becomes reachable.</div>
+
+    <div class="chunk-card">
+      <div class="chunk-phrase zh">这些环环相扣，协助集团确保基本粮食和农业供应链的运转。</div>
+      <div class="chunk-py">zhèxiē huánhuán xiāngkòu, xiézhù jítuán quèbǎo jīběn liángshi hé nóngyè gōngyìngliàn de yùnzhuǎn</div>
+      <div class="chunk-stumble">原文 (transcribed from image — verify). Why it matters: this is your 一体化 argument in native executive idiom.</div>
+      <div class="chunk-row"><span class="cz zh">这些环环相扣</span><span class="cp">zhèxiē huánhuán xiāngkòu</span><span>"these interlock, link by link" — 环 (ring) doubled, 相扣 (mutually fastened). The image your dash-and-connect sentences have been reaching for.</span></div>
+      <div class="chunk-row"><span class="cz zh">协助集团</span><span class="cp">xiézhù jítuán</span><span>"helps the group" — 协助 is the formal 帮助; you know 集团 cold.</span></div>
+      <div class="chunk-row"><span class="cz zh">确保</span><span class="cp">quèbǎo</span><span>"to ensure" — 确 (certain) + 保 (protect). A word your risk-management decade will use constantly.</span></div>
+      <div class="chunk-row"><span class="cz zh">基本粮食和农业供应链</span><span class="cp">jīběn liángshi hé nóngyè gōngyìngliàn</span><span>"the basic food and agricultural supply chain" — stacked modifiers, big-to-small as ever.</span></div>
+      <div class="chunk-row"><span class="cz zh">的运转</span><span class="cp">de yùnzhuǎn</span><span>"’s operation/running" — 运转 = to keep turning; what the whole sentence exists to protect.</span></div>
+    </div>
+
+    <div class="chunk-card">
+      <div class="chunk-phrase zh">把产品从世界各地的农民那里，运送到终端消费者手中。</div>
+      <div class="chunk-py">bǎ chǎnpǐn cóng shìjiè gèdì de nóngmín nàli, yùnsòng dào zhōngduān xiāofèizhě shǒu zhōng</div>
+      <div class="chunk-stumble">原文 (transcribed — verify). Why it matters: a full 把 + 从…到… sentence — the grammar you attempted in Lesson 4’s 把-construction, at journalism grade.</div>
+      <div class="chunk-row"><span class="cz zh">把产品</span><span class="cp">bǎ chǎnpǐn</span><span>把 grabs the product — same construction as your 我们把…连在一起.</span></div>
+      <div class="chunk-row"><span class="cz zh">从世界各地的农民那里</span><span class="cp">cóng…nóngmín nàli</span><span>"from farmers all over the world" — 那里 turns people into a place you can move goods <i>from</i>.</span></div>
+      <div class="chunk-row"><span class="cz zh">运送到</span><span class="cp">yùnsòng dào</span><span>"transport to" — verb + 到 lands the movement at its destination.</span></div>
+      <div class="chunk-row"><span class="cz zh">终端消费者手中</span><span class="cp">zhōngduān xiāofèizhě shǒu zhōng</span><span>"into the hands of end consumers" — 手中 (in the hands of) is the elegant close; farm to table, literally farmer to hand.</span></div>
+    </div>
+
+    <div class="chunk-card">
+      <div class="chunk-phrase zh">从教师大胆转换跑道，在农业大宗商品交易大展拳脚。</div>
+      <div class="chunk-py">cóng jiàoshī dàdǎn zhuǎnhuàn pǎodào, zài nóngyè dàzōng shāngpǐn jiāoyì dà zhǎn quánjiǎo</div>
+      <div class="chunk-stumble">The section headline (adapted). Why it matters: this is the career-arc template — swap the nouns and it’s your story.</div>
+      <div class="chunk-row"><span class="cz zh">从教师</span><span class="cp">cóng jiàoshī</span><span>"from (being) a teacher" — the starting lane. Yours: 从管理顾问.</span></div>
+      <div class="chunk-row"><span class="cz zh">大胆转换跑道</span><span class="cp">dàdǎn zhuǎnhuàn pǎodào</span><span>"boldly switched tracks" — 大胆 (big-gutted) admires the leap; 跑道 is the running lane.</span></div>
+      <div class="chunk-row"><span class="cz zh">在农业大宗商品交易</span><span class="cp">zài nóngyè dàzōng shāngpǐn jiāoyì</span><span>"in agri-commodities trading" — note 交易 here as the <i>field</i> of dealing; your scripts still say 贸易 for the flow.</span></div>
+      <div class="chunk-row"><span class="cz zh">大展拳脚</span><span class="cp">dà zhǎn quánjiǎo</span><span>"spread fists and feet wide" — made his mark. The idiom a profile writer would one day hang on you.</span></div>
+    </div>
+  </section>
+
+  <div class="part"><span class="part-num">PREP 3</span><span class="part-title"><span class="zh">模拟采访</span>Mock media interview — the kit</span></div>
+
+  <section>
+    <div class="ped-note"><b>The format is plausible reality:</b> Zaobao interviewing Wilmar’s sugar head is a story their business desk would run. Six questions in the journalist’s register for Queenie to fire at you cold — your existing three dialogues answer Q1–Q3 nearly verbatim; Q4–Q6 are the gap this module exists to close.</div>
+    <div class="vocab-scroll">
+      <table>
+        <thead><tr><th>#</th><th>The question</th><th>Pinyin</th><th>What answers it</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td class="zh">请您先介绍一下自己和您的工作。</td><td class="py">Qǐng nín xiān jièshào yíxià zìjǐ hé nín de gōngzuò.</td><td class="note">Dialogue 1, as is. Note 您 — expect it, return it.</td></tr>
+          <tr><td>2</td><td class="zh">丰益的糖业务有什么特点？</td><td class="py">Fēngyì de táng yèwù yǒu shénme tèdiǎn?</td><td class="note">Dialogue 2 (一体化). 特点 = distinguishing features.</td></tr>
+          <tr><td>3</td><td class="zh">可以具体讲一讲你们在不同国家的业务吗？</td><td class="py">Kěyǐ jùtǐ jiǎng yi jiǎng nǐmen zài bùtóng guójiā de yèwù ma?</td><td class="note">Dialogue 3 country tour — and there’s Lesson 4’s 具体 doing its job.</td></tr>
+          <tr><td>4</td><td class="zh">新加坡对你们的糖业务来说，为什么重要？</td><td class="py">Xīnjiāpō duì nǐmen…wèishénme zhòngyào?</td><td class="note">GAP — needs a prepared answer: 总部, trading talent, 门户 to Asia.</td></tr>
+          <tr><td>5</td><td class="zh">您以前不是做贸易的，为什么转换跑道？</td><td class="py">Nín yǐqián bú shì zuò màoyì de, wèishénme zhuǎnhuàn pǎodào?</td><td class="note">GAP — the career-arc question. Draft below.</td></tr>
+          <tr><td>6</td><td class="zh">工作这么忙，家人支持您吗？</td><td class="py">Gōngzuò zhème máng, jiārén zhīchí nín ma?</td><td class="note">The personal-colour close Chinese media always ask — he answered with family; you have Lesson 3’s daughters vocabulary ready (第三个女儿, not the other thing).</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Draft answer for Q5 — 草稿, for Queenie to correct</h2>
+    <div class="ped-note"><b>Deliberately built from patterns you already own</b> (以前/后来/现在, 已经…了, 因为…所以, 跟…相关) plus this module’s 转换跑道 and 风险管理. It is a draft: bring it to class, let her fine-tune (微调), then it becomes Dialogue 4.</div>
+    <div class="flow-card">
+      <div class="hanzi zh">我的跑道也转换过。我以前是管理顾问，在贝恩公司工作。后来我加入丰益，负责集团的商业发展，比如并购和合资项目。之后，我负责糖业务的风险管理，已经十年了。现在我是糖业的负责人。对我来说，风险管理的经验很有用 —— 因为做贸易，最重要的就是管理风险。</div>
+      <div class="pinyin">Wǒ de pǎodào yě zhuǎnhuàn guo. Wǒ yǐqián shì guǎnlǐ gùwèn, zài Bèi’ēn Gōngsī gōngzuò. Hòulái wǒ jiārù Fēngyì, fùzé jítuán de shāngyè fāzhǎn, bǐrú bìnggòu hé hézī xiàngmù. Zhīhòu, wǒ fùzé táng yèwù de fēngxiǎn guǎnlǐ, yǐjīng shí nián le. Xiànzài wǒ shì tángyè de fùzérén. Duì wǒ lái shuō, fēngxiǎn guǎnlǐ de jīngyàn hěn yǒuyòng — yīnwèi zuò màoyì, zuì zhòngyào de jiù shì guǎnlǐ fēngxiǎn.</div>
+      <div class="english">My track has switched too. I was a management consultant at Bain. Later I joined Wilmar, leading group business development — M&amp;A and JV projects. After that I ran risk management for the sugar business, for ten years now. Today I head the sugar business. For me the risk experience is invaluable — because in trading, the most important thing is managing risk.</div>
+      <div class="flow-note">Spoken-delivery check before class: the 贸易/交易 boundary from Lesson 3 holds here — 做贸易 (the business), 管理风险 (the job). One deliberate echo: 最重要的就是 reuses the 就 clincher from 这就达成了一体化.</div>
+    </div>
+
+    <h2>Read-aloud paragraph — the rung above the ladder</h2>
+    <div class="ped-note"><b>One paragraph per lesson, cold:</b> reading aloud under novel-vocabulary load is a different skill from rehearsed scripts. Start with the 环环相扣 paragraph (both chunked sentences above, joined). Mark every 占-class hazard before you start: 供应链, 运转, 终端.</div>
+    <div class="flow-card">
+      <div class="hanzi zh">这些环环相扣，协助集团确保基本粮食和农业供应链的运转，把产品从世界各地的农民那里，运送到终端消费者手中。</div>
+      <div class="pinyin">Zhèxiē huánhuán xiāngkòu, xiézhù jítuán quèbǎo jīběn liángshi hé nóngyè gōngyìngliàn de yùnzhuǎn, bǎ chǎnpǐn cóng shìjiè gèdì de nóngmín nàli, yùnsòng dào zhōngduān xiāofèizhě shǒu zhōng.</div>
+      <div class="english">These interlock link by link, helping the group ensure the basic food and agricultural supply chain keeps running — moving products from farmers across the world into the hands of end consumers.</div>
+      <div class="flow-note">原文 flag: transcribed from a photo of newsprint; confirm wording against the article with Queenie before treating it as exact.</div>
+    </div>
+  </section>
+
+  </div><!-- /lesson-pane prep-zaobao -->
+<footer>
+  <div class="sub">Topic pages: 01 · Self-introduction &amp; company dialogues (see main lesson record) · <b>02 · LDC interview prep (this page)</b>. Maintained per class with Queenie Chow (周老师).</div>
+</footer>
+</div>
+</body>
+</html>
