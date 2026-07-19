@@ -160,6 +160,30 @@
   .lesson-tab:hover:not(.active){background:var(--steel-wash);}
   .lesson-pane{display:none;}
   .lesson-pane.active{display:block;}
+  /* five-pillar PPT simulator */
+  .org-wrap{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px 20px 20px;}
+  .org-title{text-align:center;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);font-weight:700;margin-bottom:14px;}
+  .org-top{margin:0 auto;max-width:300px;background:#0f5f52;color:#fff;text-align:center;border-radius:10px;padding:12px 16px;font-weight:700;font-size:17px;box-shadow:0 2px 6px rgba(15,95,82,.25);}
+  .org-top .en{display:block;font-size:11px;font-weight:600;opacity:.85;letter-spacing:.08em;margin-top:2px;}
+  .org-stem{width:2px;height:22px;background:#9dbfb8;margin:0 auto;}
+  .org-bar{height:2px;background:#9dbfb8;margin:0 8% 0 8%;}
+  .pillars-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:0;padding-top:22px;position:relative;cursor:pointer;}
+  .pillar{border:1.5px dashed #c9d8d4;border-radius:10px;min-height:180px;display:flex;flex-direction:column;transition:all .35s ease;position:relative;}
+  .pillar .ph{background:#0f5f52;color:#fff;border-radius:8px 8px 0 0;padding:9px 10px;font-weight:700;font-size:14.5px;line-height:1.35;opacity:0;transition:opacity .35s;}
+  .pillar .ph .role{display:block;font-size:11px;font-weight:600;color:#ffd97a;margin-top:3px;}
+  .pillar .pb{padding:9px 11px 11px;font-size:12.5px;line-height:1.55;opacity:0;transition:opacity .35s .1s;}
+  .pillar .pb ul{margin:0;padding-left:16px;}
+  .pillar .pb li{margin-bottom:5px;}
+  .pillar .pnum{position:absolute;top:8px;left:0;right:0;text-align:center;color:#b9cdc8;font-size:26px;font-weight:800;transition:opacity .3s;}
+  .pillar.revealed{border:1px solid #0f5f52;background:#f4faf8;box-shadow:0 2px 8px rgba(15,95,82,.12);}
+  .pillar.revealed .ph,.pillar.revealed .pb{opacity:1;}
+  .pillar.revealed .pnum{opacity:0;}
+  .pillar .speakline{display:none;border-top:1px dashed #c9d8d4;margin-top:auto;padding:8px 11px;font-size:12px;color:var(--steel-deep);background:#eef6f3;border-radius:0 0 9px 9px;}
+  .pillar.speaking .speakline{display:block;}
+  .sim-controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;align-items:center;}
+  .sim-status{font-size:12.5px;color:var(--ink-soft);margin-left:auto;}
+  @media(max-width:760px){.pillars-row{grid-template-columns:1fr 1fr;}.org-bar{display:none;}}
+  @media(max-width:460px){.pillars-row{grid-template-columns:1fr;}}
   /* stumble chunk breakdowns */
   .chunk-card{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:16px;background:#fff;}
   .chunk-phrase{font-size:20px;font-weight:700;line-height:1.5;}
@@ -214,6 +238,7 @@
       <button class="lesson-tab" data-pane="pane-2026-07-09">09 Jul 2026 · 五大支柱与商业版图</button>
       <button class="lesson-tab" data-pane="pane-2026-07-12">12 Jul 2026 · 修订与句型</button>
       <button class="lesson-tab" data-pane="pane-2026-07-16">16 Jul 2026 · 三大对话定稿</button>
+      <button class="lesson-tab" data-pane="pane-2026-07-19">19 Jul 2026 · 总结与支柱演示</button>
     </div>
   </div>
 </header>
@@ -1728,8 +1753,203 @@
 
   </div><!-- /lesson-pane 2026-07-16 -->
 
+
+
+
+
+  <div class="lesson-pane" id="pane-2026-07-19">
+    <div class="lesson-meta">
+      <div class="lm-row"><span class="lm-k">Lesson</span><span class="lm-v">Sunday 19 July 2026, 2:00 PM · Tutor: Queenie Chow (周老师) · built from the full verbatim transcript</span></div>
+      <div class="lm-row"><span class="lm-k">Topic</span><span class="lm-v"><span class="zh">总结与定稿</span> — consolidation: all three dialogues read and refined to FINAL; PPT delivery method prescribed (Chinese on the five columns, revealed one at a time)</span></div>
+      <div class="lm-row"><span class="lm-k">Milestones</span><span class="lm-v">Self-intro delivered without reading — "internalized already." Curriculum negotiated in Chinese (我的想法是…用这个材料来上课 — 非常棒). Spontaneous script additions praised: 加得非常自然.</span></div>
+      <div class="lm-row"><span class="lm-k">Next lesson</span><span class="lm-v">TBC by 短信 — Geneva trip tonight through Friday; Thursday 23 July held tentatively. Homework: put the Chinese onto the five PPT columns (done — Part 2 below).</span></div>
+      <div class="lm-nav">
+        <a href="#part-changes-l5">1 · Today’s refinements &amp; finals</a>
+        <a href="#part-sim-l5">2 · 五大支柱 PPT simulator</a>
+        <a href="#part-culture-l5">3 · Culture &amp; extras</a>
+      </div>
+    </div>
+
+    <div class="assess">
+      <div class="assess-h">Benchmark note — fifth verbatim sample (compact; full re-grade at lesson 7)</div>
+      <div class="assess-overall">Interaction <b>B1− holding (third consecutive sample)</b> — and today added a new behaviour: negotiating the curriculum itself in Chinese (proposing the LDC article as material, describing your competitor with 竞争对手 and 不完全是). Production: self-intro now runs unscripted; pillar script survived two full passes. The constraint is unchanged and precisely named: 支柱, the S/SH/C/CH southern pairs (私人有限公司), and 效率 — all drilled today, none yet automatic. Queenie’s explicit instruction: stop worrying about sheng/shen — 不会有人听不明白.</div>
+    </div>
+
+  <div class="part" id="part-changes-l5"><span class="part-num">PART 1</span><span class="part-title"><span class="zh">定稿</span>Today’s refinements — and the three FINAL dialogues</span></div>
+
+  <section>
+    <h2>What changed today</h2>
+    <div class="assess" style="margin-bottom:22px;">
+      <div class="assess-h">Refinements — chosen form in bold</div>
+      <div class="arow"><span class="sk">Your ten years</span><span class="gr"><b>关于糖方面的业务，我已经做了十年</b><span class="pys">guānyú…wǒ yǐjīng zuò le shí nián</span></span><span class="ev">Your own precision fix: 负责…十年 implied you ran everything for a decade. 做 (did/worked on) says exactly what you mean — a decade in sugar, leadership only now. Queenie approved on the spot.</span></div>
+      <div class="arow"><span class="sk">The plants</span><span class="gr"><b>除了这些糖厂之外</b><span class="pys">chúle zhèxiē tángchǎng zhīwài</span></span><span class="ev">Add 这些 — you just listed the mills, so "these" ties the transition back to them.</span></div>
+      <div class="arow"><span class="sk">Brands</span><span class="gr"><b>消费者品牌</b><span class="pys">xiāofèizhě pǐnpái</span></span><span class="ev">Your fix, her endorsement: adding 者 (consumer’s brand) breaks the 消费/销售 confusion for good — and it worked live on the second pass.</span></div>
+      <div class="arow"><span class="sk">India recap</span><span class="gr"><b>跟澳大利亚一样，我们在印度也有八家原糖厂</b><span class="pys">gēn Àodàlìyà yíyàng</span></span><span class="ev">Her spotting: both countries have exactly eight mills. Saying so is a delivery technique — a recap that helps the audience remember and takes pressure off you (you’re relaying figures, not producing them). The Lesson 3 pattern A跟B一样, doing real work.</span></div>
+      <div class="arow"><span class="sk">Kandla</span><span class="gr"><b>在印度西部的坎德拉，我们的炼糖厂…</b><span class="pys">zài Yìndù xībù de Kǎndélā</span></span><span class="ev">Location fronted (big-to-small again), exactly one 的, and 西部 not 西方 — 部 is an area, 方 a direction. Your spontaneous 我们的 insertion was praised: 加得非常自然.</span></div>
+      <div class="arow"><span class="sk">The exam pattern</span><span class="gr"><b>除了…以外，还…</b><span class="pys">chúle…yǐwài, hái…</span></span><span class="ev">The complete formal frame of your 除了: 除了生产原糖以外，还生产乙醇和电力. 以外 optional in speech, mandatory in exams — "the more you put in, the more score you get."</span></div>
+      <div class="arow"><span class="sk">Opener</span><span class="gr"><b>我们大家来看看这个PPT</b><span class="pys">wǒmen dàjiā lái kànkan</span></span><span class="ev">口语 upgrade over 请看 — invites rather than instructs.</span></div>
+      <div class="arow"><span class="sk">Concept fixed</span><span class="gr"><b>产能 = capacity · 产量 = output</b><span class="pys">chǎnnéng / chǎnliàng</span></span><span class="ev">The 60% is a capacity share. 股权 vs 股份 similarly settled: both work; 股权 is more precise (the rights). And 全球 = 世界上 — free variation.</span></div>
+    </div>
+
+    <h2>FINAL · <span class="zh">自我介绍</span></h2>
+    <div class="flow-card">
+      <div class="hanzi zh">大家好，我是郭祖扬 —— 祖先的祖，扬名四海的扬。我是丰益国际集团专门负责糖业的负责人。我在丰益工作了十六年；关于糖方面的业务，我已经做了十年。以前我负责集团的商业发展，比如并购和合资项目。我的中文讲得不太好，请大家多多包涵。希望以后跟大家多多合作，谢谢大家！</div>
+      <div class="pinyin">Dàjiā hǎo, wǒ shì Guō Zǔyáng — zǔxiān de zǔ, yángmíng sìhǎi de yáng. Wǒ shì Fēngyì Guójì Jítuán zhuānmén fùzé tángyè de fùzérén. Wǒ zài Fēngyì gōngzuò le shíliù nián; guānyú táng fāngmiàn de yèwù, wǒ yǐjīng zuò le shí nián. Yǐqián wǒ fùzé jítuán de shāngyè fāzhǎn, bǐrú bìnggòu hé hézī xiàngmù. Wǒ de Zhōngwén jiǎng de bú tài hǎo, qǐng dàjiā duōduō bāohan. Xīwàng yǐhòu gēn dàjiā duōduō hézuò, xièxie dàjiā!</div>
+      <div class="english">Hello everyone, I’m Guo Zuyang — the 祖 of "ancestors", the 扬 of "renowned across the four seas". I head the sugar business at Wilmar International. I’ve worked at Wilmar for sixteen years; in sugar specifically, I’ve worked for ten. Before that I led group business development — M&amp;A and JV projects. My Chinese isn’t great, please bear with me. I look forward to working with you all — thank you!</div>
+      <div class="flow-note">Status: <b>graduated.</b> Delivered today without reading and off-script in places, to a "you’ve internalized it already." The one change is yours: 我已经做了十年 — a decade <i>in</i> sugar, not a decade running it.</div>
+    </div>
+
+    <h2>FINAL · Business introduction v5</h2>
+    <div class="flow-card">
+      <div class="hanzi zh">下面我会介绍一下我们丰益集团的情况。我们丰益集团的糖业务是一体化的。首先，我们有自己的原糖厂和炼糖厂，它们分布在澳大利亚、新西兰、印尼、缅甸、印度和沙特。除了这些糖厂之外，我们的总部在新加坡；在瑞士的日内瓦、巴西的圣保罗和迪拜都有分公司；在泰国有代办处。这些分公司经销我们自己生产的糖。同时，因为我们自有的贸易量很大，买卖别人的糖也变得容易，所以我们也收购第三方的糖，进行贸易。通过贸易，我们把糖厂和分公司的所有业务连在一起，这就达成了一体化。我们是全球最大的糖贸易商，一年的贸易量达到一千二百万吨左右。在巴西、泰国和澳大利亚，我们的贸易份额都是第一。我们也是全球最大的炼糖商之一，产能达到四百五十万吨左右。我们在澳大利亚有八处原糖厂，它们除了生产原糖，还生产乙醇和发电；产能加起来，占了整个澳大利亚糖产能的百分之六十。我们在澳新、沙特和印度也有很多知名的消费者品牌。</div>
+      <div class="pinyin">Xiàmiàn wǒ huì jièshào yíxià wǒmen Fēngyì Jítuán de qíngkuàng. Wǒmen Fēngyì Jítuán de táng yèwù shì yìtǐhuà de. Shǒuxiān, wǒmen yǒu zìjǐ de yuántángchǎng hé liàntángchǎng, tāmen fēnbù zài Àodàlìyà, Xīnxīlán, Yìnní, Miǎndiàn, Yìndù hé Shātè. Chúle zhèxiē tángchǎng zhīwài, wǒmen de zǒngbù zài Xīnjiāpō; zài Ruìshì de Rìnèiwǎ, Bāxī de Shèngbǎoluó hé Díbài dōu yǒu fēngōngsī; zài Tàiguó yǒu dàibànchù. Zhèxiē fēngōngsī jīngxiāo wǒmen zìjǐ shēngchǎn de táng. Tóngshí, yīnwèi wǒmen zìyǒu de màoyìliàng hěn dà, mǎimài biéren de táng yě biàn de róngyì, suǒyǐ wǒmen yě shōugòu dìsānfāng de táng, jìnxíng màoyì. Tōngguò màoyì, wǒmen bǎ tángchǎng hé fēngōngsī de suǒyǒu yèwù lián zài yìqǐ, zhè jiù dáchéng le yìtǐhuà. Wǒmen shì quánqiú zuì dà de táng màoyìshāng, yì nián de màoyìliàng dádào yìqiān èrbǎi wàn dūn zuǒyòu. Zài Bāxī, Tàiguó hé Àodàlìyà, wǒmen de màoyì fèn’é dōu shì dì yī. Wǒmen yě shì quánqiú zuì dà de liàntángshāng zhī yī, chǎnnéng dádào sìbǎi wǔshí wàn dūn zuǒyòu. Wǒmen zài Àodàlìyà yǒu bā chù yuántángchǎng, tāmen chúle shēngchǎn yuántáng, hái shēngchǎn yǐchún hé fādiàn; chǎnnéng jiā qǐlai, zhàn le zhěnggè Àodàlìyà táng chǎnnéng de bǎifēnzhī liùshí. Wǒmen zài Àoxīn, Shātè hé Yìndù yě yǒu hěn duō zhīmíng de xiāofèizhě pǐnpái.</div>
+      <div class="english">Next, let me introduce our Wilmar Group’s situation. Our sugar business is integrated. First, we have our own raw sugar mills and refineries, distributed across Australia, New Zealand, Indonesia, Myanmar, India and Saudi Arabia. Beyond these plants, our headquarters is in Singapore; branch offices in Geneva, São Paulo and Dubai; a representative office in Thailand. These branches distribute the sugar we produce. At the same time, because our own traded volume is so large, trading other people’s sugar becomes easy — so we also buy third-party sugar and trade it. Through trading we join the mills and branches into one business, and this achieves the integration. We are the world’s largest sugar trader, around twelve million tonnes a year. In Brazil, Thailand and Australia our trade share is number one. We are also among the world’s largest refiners, capacity around 4.5 million tonnes. In Australia we have eight raw mills; besides raw sugar they produce ethanol and generate power, and their combined capacity accounts for 60% of Australia’s entire sugar capacity. In ANZ, Saudi Arabia and India we also have many well-known consumer brands.</div>
+      <div class="flow-note">v4 → v5 in two touches: 除了<b>这些</b>糖厂之外 and 消费<b>者</b>品牌. Concept note from today: the 60% is <b>产能</b> (capacity), not 产量 (output) — hold that distinction if questioned.</div>
+    </div>
+
+    <h2>FINAL · <span class="zh">五大支柱</span> v4</h2>
+    <div class="flow-card">
+      <div class="hanzi zh">我们大家来看看这个PPT。我们的糖业务有五大支柱。首先，丰益糖业私人有限公司是我们的贸易公司，总部在新加坡。我们做原糖、白糖和糖蜜的贸易。我们是全球最大的糖贸易商，市场份额大概占百分之三十。我们在迪拜、日内瓦和圣保罗都有分公司。在巴西、泰国和澳大利亚，我们是最大的买家。除了糖的贸易之外，我们还有其他跟糖相关的业务。下面我们来讲一讲我们在不同国家的情况。首先我们来看看澳大利亚和新西兰的情况。我们在澳大利亚有八家原糖厂，生产澳大利亚一半以上的原糖，也生产乙醇和可再生电力。同时，我们还有三家炼糖厂：两家在澳大利亚，一家在新西兰。市场份额在澳大利亚大概占百分之六十，新西兰接近百分之九十。在这两个市场，我们的消费者品牌已经有百多年的历史了。再来看看印尼的情况：我们有两家炼糖厂，市场份额大概占当地的百分之十五。这里是印度。我们在印度的公司叫 Shree Renuka Sugars。它自己是一个上市公司，我们是最大的股东，拥有百分之六十二的股权。跟澳大利亚一样，我们在印度也有八家原糖厂，还有两家炼糖厂。在印度西部的坎德拉，我们的炼糖厂是世界上效率最高的炼糖厂之一。同样的，我们的糖厂除了生产原糖以外，还生产乙醇和电力。我们糖的品牌是印度第一的。最后是沙特的 Durrah。它是一家炼糖厂，是我们和沙特伙伴各占一半的合资公司。市场份额大概占当地的百分之六十。</div>
+      <div class="pinyin">Wǒmen dàjiā lái kànkan zhè ge PPT. Wǒmen de táng yèwù yǒu wǔ dà zhīzhù. Shǒuxiān, Fēngyì Tángyè Sīrén Yǒuxiàn Gōngsī shì wǒmen de màoyì gōngsī, zǒngbù zài Xīnjiāpō. Wǒmen zuò yuántáng, báitáng hé tángmì de màoyì. Wǒmen shì quánqiú zuì dà de táng màoyìshāng, shìchǎng fèn’é dàgài zhàn bǎifēnzhī sānshí. Wǒmen zài Díbài, Rìnèiwǎ hé Shèngbǎoluó dōu yǒu fēngōngsī. Zài Bāxī, Tàiguó hé Àodàlìyà, wǒmen shì zuì dà de mǎijiā. Chúle táng de màoyì zhīwài, wǒmen hái yǒu qítā gēn táng xiāngguān de yèwù. Xiàmiàn wǒmen lái jiǎng yi jiǎng wǒmen zài bùtóng guójiā de qíngkuàng. Shǒuxiān wǒmen lái kànkan Àodàlìyà hé Xīnxīlán de qíngkuàng. Wǒmen zài Àodàlìyà yǒu bā jiā yuántángchǎng, shēngchǎn Àodàlìyà yíbàn yǐshàng de yuántáng, yě shēngchǎn yǐchún hé kězàishēng diànlì. Tóngshí, wǒmen hái yǒu sān jiā liàntángchǎng: liǎng jiā zài Àodàlìyà, yì jiā zài Xīnxīlán. Shìchǎng fèn’é zài Àodàlìyà dàgài zhàn bǎifēnzhī liùshí, Xīnxīlán jiējìn bǎifēnzhī jiǔshí. Zài zhè liǎng ge shìchǎng, wǒmen de xiāofèizhě pǐnpái yǐjīng yǒu bǎi duō nián de lìshǐ le. Zài lái kànkan Yìnní de qíngkuàng: wǒmen yǒu liǎng jiā liàntángchǎng, shìchǎng fèn’é dàgài zhàn dāngdì de bǎifēnzhī shíwǔ. Zhèlǐ shì Yìndù. Wǒmen zài Yìndù de gōngsī jiào Shree Renuka Sugars. Tā zìjǐ shì yí ge shàngshì gōngsī, wǒmen shì zuì dà de gǔdōng, yōngyǒu bǎifēnzhī liùshí’èr de gǔquán. Gēn Àodàlìyà yíyàng, wǒmen zài Yìndù yě yǒu bā jiā yuántángchǎng, hái yǒu liǎng jiā liàntángchǎng. Zài Yìndù xībù de Kǎndélā, wǒmen de liàntángchǎng shì shìjiè shang xiàolǜ zuì gāo de liàntángchǎng zhī yī. Tóngyàng de, wǒmen de tángchǎng chúle shēngchǎn yuántáng yǐwài, hái shēngchǎn yǐchún hé diànlì. Wǒmen táng de pǐnpái shì Yìndù dì yī de. Zuìhòu shì Shātè de Durrah. Tā shì yì jiā liàntángchǎng, shì wǒmen hé Shātè huǒbàn gè zhàn yíbàn de hézī gōngsī. Shìchǎng fèn’é dàgài zhàn dāngdì de bǎifēnzhī liùshí.</div>
+      <div class="english">Let’s all take a look at this deck. Our sugar business has five pillars. First, Wilmar Sugar Pte Ltd is our trading company, headquartered in Singapore. We trade raw sugar, white sugar and molasses — the world’s largest sugar trader, roughly 30% market share, with branch offices in Dubai, Geneva and São Paulo. In Brazil, Thailand and Australia we are the largest buyer. Beyond sugar trading, we also have other sugar-related businesses — let me walk through our situation country by country. First, Australia and New Zealand: eight raw mills producing over half of Australia’s raw sugar, plus ethanol and renewable power; at the same time three refineries — two in Australia, one in New Zealand. Market share roughly 60% in Australia, close to 90% in New Zealand; in these two markets our consumer brands have over a hundred years of history. Next, Indonesia: two refineries, roughly 15% of the local market. Here is India. Our company there, Shree Renuka Sugars, is itself a listed company in which we are the largest shareholder with a 62% stake. Just like Australia, in India we also have eight raw mills, plus two refineries. In Kandla, in western India, our refinery is among the world’s most efficient. And just as in Australia, besides raw sugar the mills also produce ethanol and power. Our sugar brand is India’s number one. Lastly, Durrah in Saudi Arabia — a refinery, a 50-50 JV with our Saudi partners, roughly 60% of the local market.</div>
+      <div class="flow-note">v3 → v4: the 口语 opener, the India-recap technique (跟澳大利亚一样 — twice, once for the mills, once for the by-products with 除了…以外，还…), the fronted 在印度西部的坎德拉, and 消费者品牌 in the ANZ brands line. Her practice prescription: <b>five parts, never end-to-end</b> — trading co / ANZ / Indonesia / India / Saudi, one part per sitting.</div>
+    </div>
+  </section>
+
+  <div class="part" id="part-sim-l5"><span class="part-num">PART 2</span><span class="part-title"><span class="zh">五大支柱演示</span>The PPT bullets — and the presentation simulator</span></div>
+
+  <section>
+    <div class="ped-note"><b>This is the homework, done, and the rehearsal tool in one.</b> The layout mirrors your actual slide 2 (the org chart with five columns), with the English replaced by presentation-ready Chinese bullets. It behaves the way Queenie prescribed the real deck should: <b>columns appear one at a time</b> — click the chart (or the button) to reveal the next pillar, speak that pillar’s section, then advance. Click a revealed pillar to toggle its speaking cue. When all five stand, the audience knows 五大支柱 讲完了. Use these bullets as the literal text for your PowerPoint columns; the animation order is the delivery order.</div>
+
+    <div class="org-wrap" id="sim-l5">
+      <div class="org-title">Wilmar Sugar and Energy · Our Structure — 中文版</div>
+      <div class="org-top"><span class="zh">丰益糖业与能源</span><span class="en">WILMAR SUGAR &amp; ENERGY</span></div>
+      <div class="org-stem"></div>
+      <div class="org-bar"></div>
+      <div class="pillars-row" id="pillars-row-l5">
+        <div class="pillar" data-p="0">
+          <div class="pnum">一</div>
+          <div class="ph zh">丰益糖业私人有限公司<span class="role zh">原糖 · 白糖 · 糖蜜贸易</span></div>
+          <div class="pb zh"><ul>
+            <li>丰益全资子公司</li>
+            <li>全球最大糖贸易商 · 市场份额约30%</li>
+            <li>总部新加坡；迪拜、日内瓦、圣保罗设分公司</li>
+            <li>巴西、泰国、澳大利亚最大买家</li>
+          </ul></div>
+          <div class="speakline zh">说：首先…贸易公司 · 总部 · 三大产品 · 约占30% · 最大的买家</div>
+        </div>
+        <div class="pillar" data-p="1">
+          <div class="pnum">二</div>
+          <div class="ph zh">澳新<span class="role zh">原糖生产 · 炼糖</span></div>
+          <div class="pb zh"><ul>
+            <li>八家原糖厂 · 产澳大利亚一半以上原糖</li>
+            <li>同时生产乙醇和可再生电力</li>
+            <li>三家炼糖厂：澳两家 · 新一家</li>
+            <li>市场份额：澳约60% · 新接近90%</li>
+            <li>消费者品牌已有百多年历史</li>
+          </ul></div>
+          <div class="speakline zh">说：首先看看澳新的情况 · 八家 · 一半以上 · 同时三家炼糖厂 · 60/90 · 百多年了</div>
+        </div>
+        <div class="pillar" data-p="2">
+          <div class="pnum">三</div>
+          <div class="ph zh">印尼<span class="role zh">炼糖</span></div>
+          <div class="pb zh"><ul>
+            <li>两家全资炼糖厂（PT JMR · PT DSI）</li>
+            <li>总产能85万吨</li>
+            <li>市场份额约当地15%</li>
+          </ul></div>
+          <div class="speakline zh">说：再来看看印尼 · 两家炼糖厂 · 当地的15%</div>
+        </div>
+        <div class="pillar" data-p="3">
+          <div class="pnum">四</div>
+          <div class="ph zh">印度 · Shree Renuka Sugars<span class="role zh">原糖生产 · 炼糖</span></div>
+          <div class="pb zh"><ul>
+            <li>上市公司 · 我们是最大股东（拥有62%股权）</li>
+            <li>跟澳大利亚一样：八家原糖厂 · 两家炼糖厂</li>
+            <li>印度西部坎德拉：世界上效率最高的炼糖厂之一</li>
+            <li>除了糖以外，还生产乙醇和电力</li>
+            <li>糖品牌印度第一（MADHU）</li>
+          </ul></div>
+          <div class="speakline zh">说：这里是印度 · 上市公司 · 最大的股东 · 62%股权 · 跟澳大利亚一样八家 · 坎德拉效率 · 除了…以外还… · 第一的</div>
+        </div>
+        <div class="pillar" data-p="4">
+          <div class="pnum">五</div>
+          <div class="ph zh">沙特 · Durrah<span class="role zh">炼糖 · 多元化食品</span></div>
+          <div class="pb zh"><ul>
+            <li>与沙特伙伴各占一半的合资公司</li>
+            <li>延布港炼糖厂 · 产能85万吨</li>
+            <li>市场份额约当地60%</li>
+            <li>已扩展到食用油、大米</li>
+          </ul></div>
+          <div class="speakline zh">说：最后是沙特的Durrah · 它是一家炼糖厂 · 各占一半 · 当地的60%</div>
+        </div>
+      </div>
+      <div class="sim-controls">
+        <button class="btn" id="sim-next-l5">下一个支柱 · Reveal next</button>
+        <button class="btn ghost" id="sim-all-l5">全部显示 · Show all</button>
+        <button class="btn ghost" id="sim-reset-l5">重来 · Reset</button>
+        <span class="sim-status" id="sim-status-l5"></span>
+      </div>
+    </div>
+    <div class="ped-note" style="margin-top:14px;"><b>Figure flags before this goes on a real slide:</b> deck says ~28% trade share (script says 约30%) and 62.5% Shree Renuka ownership (you say 62% — fine spoken, use 62.5% in print). Indonesia/Durrah capacities (85万吨 each) and MADHU/brand details are from the deck. The mills-60%-capacity vs deck "half of raw sugar production" reconciliation still stands open — 产能 vs 产量 is exactly the distinction that resolves it.</div>
+
+    <h2>The shorthand on those columns — <span class="zh">简称</span> and how to use it</h2>
+    <div class="ped-note"><b>What you spotted:</b> the bullets are written in slide register — 电报体 (diànbàotǐ, "telegram style"), the compressed Chinese of headlines, decks and reports. Three mechanisms are at work: <b>country contractions</b> (澳 for Australia, 新 for New Zealand, fused as 澳新), <b>single-character verbs</b> (产 for 生产, 设 for 设立, 约 for 大约), and <b>dropped grammar</b> — no 的, no 了, no measure words the eye doesn’t need. The usage rule is exactly Queenie’s mouth-and-screen principle, inverted: <b>the screen compresses, the mouth expands.</b> The slide says 产澳一半以上原糖; you say 生产澳大利亚一半以上的原糖. Never speak the shorthand — it’s written Chinese, and saying it aloud sounds like reading a telegram. One caution: 印 is ambiguous between 印度 and 印尼 — with both in your deck, always write those two in full.</div>
+    <div class="vocab-scroll">
+      <table>
+        <thead><tr><th>Shorthand</th><th>Pinyin</th><th>Full form / meaning</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td class="zh">澳新</td><td class="py">Ào-Xīn</td><td>澳大利亚和新西兰 · ANZ</td><td class="note">Country fusions: 中美 (China-US), 中沙 (China-Saudi). Your JV could be 中新合资 in a PRC deck.</td></tr>
+          <tr><td class="zh">约</td><td class="py">yuē</td><td>大约 · approximately</td><td class="note">约30% on the slide; 大约/大概 in the mouth. Remember: 约 stands alone, 概 never does.</td></tr>
+          <tr><td class="zh">产</td><td class="py">chǎn</td><td>生产 · produces</td><td class="note">产澳一半以上原糖 — headline verb. Same 产 as 产能/产量.</td></tr>
+          <tr><td class="zh">设</td><td class="py">shè</td><td>设立/设有 · has established</td><td class="note">迪拜设分公司 = branch established in Dubai. Spoken: 在迪拜都有分公司.</td></tr>
+          <tr><td class="zh">全资</td><td class="py">quánzī</td><td>全资拥有的 · wholly-owned</td><td class="note">全资子公司 — the deck’s "100% owned Wilmar subsidiary" in three characters.</td></tr>
+          <tr><td class="zh">总</td><td class="py">zǒng</td><td>total / head-</td><td class="note">总产能 total capacity, 总部 HQ, 总经理 GM — the aggregator prefix.</td></tr>
+          <tr><td class="zh">与</td><td class="py">yǔ</td><td>和/跟 · and, with (formal/written)</td><td class="note">The dignified "and": 丰益糖业与能源 (the top box — mirroring "Sugar &amp; Energy"), 与沙特伙伴 (with our Saudi partners). Standard in titles, company names and pairings (供给与需求, supply and demand). Spoken survivors: 与…相比 (compared with), 与…合作 (cooperate with).</td></tr>
+          <tr><td class="zh">及</td><td class="py">jí</td><td>和 · and (formal/written, list-flavoured)</td><td class="note">原糖及白糖 on a slide; 和 when speaking. 与 joins peers with weight; 及 strings list items — and 以及 is its fuller spoken-ish form.</td></tr>
+          <tr><td class="zh">含</td><td class="py">hán</td><td>包含 · including</td><td class="note">含乙醇业务 = incl. ethanol. Spoken: 包括.</td></tr>
+          <tr><td class="zh">逾 / 超</td><td class="py">yú / chāo</td><td>超过 · more than</td><td class="note">逾百年历史 — the written cousin of your 一半以上’s 以上.</td></tr>
+          <tr><td class="zh">中方 / 外方</td><td class="py">zhōngfāng / wàifāng</td><td>the Chinese side / foreign side</td><td class="note">JV language — in a PRC deck your Durrah line would read 双方各占50%.</td></tr>
+          <tr><td class="zh">同比 / 环比</td><td class="py">tóngbǐ / huánbǐ</td><td>year-on-year / period-on-period</td><td class="note">The two comparators on every Chinese results slide — worth recognising before someone shows you one.</td></tr>
+          <tr><td class="zh">简称</td><td class="py">jiǎnchēng</td><td>abbreviation, short name</td><td class="note">The word for all of the above: 丰益是丰益国际的简称.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>New vocabulary in the bullets — from the deck, not yet in your dialogues</h2>
+    <div class="ped-note"><b>Why these exist:</b> the slide carries facts your spoken scripts skip (Yanbu, the Indonesian entities, Durrah’s diversification). If a column is on screen, someone can ask about it — so each word below is a question you should be able to survive.</div>
+    <div class="vocab-scroll">
+      <table>
+        <thead><tr><th>Chinese</th><th>Pinyin</th><th>English</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td class="zh">全资子公司</td><td class="py">quánzī zǐgōngsī</td><td>wholly-owned subsidiary</td><td class="note">子公司 = child company; sits opposite 母公司 (parent).</td></tr>
+          <tr><td class="zh">总产能</td><td class="py">zǒng chǎnnéng</td><td>total capacity</td><td class="note">总产能85万吨 — 万吨 (wàn dūn) = ten-thousand-tonne units: 85万吨 = 850kmt.</td></tr>
+          <tr><td class="zh">延布港</td><td class="py">Yánbù gǎng</td><td>Yanbu port</td><td class="note">港 = port; 港口炼糖厂 = port-based refinery — Durrah’s defining feature.</td></tr>
+          <tr><td class="zh">扩展</td><td class="py">kuòzhǎn</td><td>to expand (into)</td><td class="note">已扩展到食用油、大米 — 扩展到 + new field. Sibling of 扩大 (enlarge).</td></tr>
+          <tr><td class="zh">食用油</td><td class="py">shíyòngyóu</td><td>edible oils</td><td class="note">食用 = for eating — the register that distinguishes it from crude 油. 益海嘉里’s world.</td></tr>
+          <tr><td class="zh">大米</td><td class="py">dàmǐ</td><td>rice (the grain, husked)</td><td class="note">大米 is the commodity; 米饭 is what’s in the bowl.</td></tr>
+          <tr><td class="zh">多元化食品公司</td><td class="py">duōyuánhuà shípǐn gōngsī</td><td>diversified food company</td><td class="note">多元化 crosses over from the LDC prep page — first live use in your own material.</td></tr>
+          <tr><td class="zh">战略营销协议</td><td class="py">zhànlüè yíngxiāo xiéyì</td><td>strategic marketing agreement</td><td class="note">The MADHU/AWL arrangement, if anyone probes the India brand line. 协议 = agreement.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="part" id="part-culture-l5"><span class="part-num">PART 3</span><span class="part-title"><span class="zh">文化与拓展</span>Culture &amp; extras</span></div>
+
+  <section>
+    <div class="tips">
+      <div class="tip"><b><span class="zh">知足常乐</span> (zhīzú cháng lè) — the idiom your mispronunciation bought you:</b> 支柱 (zhīzhù, pillar) came out 知足 (zhīzú) once too often, so Queenie taught the real word: 知足 = contented (足 zú = enough, the 足 of 足够 zúgòu), and the four-character classic 知足常乐 (zhīzú cháng lè) — "who knows contentment is always happy." A mispronunciation converted into an asset: if 支柱 ever escapes you at a dinner and someone smiles, you can smile back with the idiom itself.</div>
+      <div class="tip"><b>The <span class="zh">率</span> (lǜ) family — every rate you’ll ever quote:</b> 率 is the -rate suffix: 效率 (xiàolǜ) efficiency, 利率 (lìlǜ) interest rate, 市盈率 (shìyínglǜ) P/E ratio. Cousins that matter at your desk: 利息 (lìxī) interest — the cash — and 利润 (lìrùn) profit. One suffix, half the vocabulary of a term sheet.</div>
+      <div class="tip"><b><span class="zh">阅读 · 朗读 · 读一下</span> (yuèdú · lǎngdú · dú yíxià) — three ways to read:</b> 阅读 (yuèdú) = read silently (browse), 朗读 (lǎngdú) = recite word-for-word aloud (what schoolchildren do to a 课文 kèwén, set text), and the natural adult phrase for what you do in class: 我现在来读一下 (wǒ xiànzài lái dú yíxià). Also today: 想法 (xiǎngfǎ, what’s on my mind) vs 主意 (zhǔyi, a bright idea — 这个主意好!), 材料 (cáiliào, material), 短信 (duǎnxìn, a text message — what you’ll send her about Thursday), 补充 (bǔchōng, to add/supplement), and 竞争对手 (jìngzhēng duìshǒu, competitor) with the beautifully hedged 不完全是 (bù wánquán shì, "not exactly") for describing LDC’s relationship to you.</div>
+      <div class="tip"><b>Slide craft, from a teacher’s 敏感 (mǐngǎn):</b> her rule — the mouth and the screen must show the same thing, and no more. Reveal each column as you reach it; never dump all five and let the audience read ahead of you ("their eyes keep reading, and they miss what you’re saying"). And drop the numbered counting on slides entirely — the pointer plus 这里是… (zhèlǐ shì…) does the sequencing. The simulator above is this advice, executable.</div>
+    </div>
+  </section>
+
+  </div><!-- /lesson-pane 2026-07-19 -->
+
   <footer>
-    中文课 · Chinese Lesson Record · One tab per class with Queenie Chow · Each lesson: vocabulary, dialogues, cultural context, extras (rolling word bank), practice · Practice progress resets on reload · Next lesson: Sunday 19 July, 4:30 PM.
+    中文课 · Chinese Lesson Record · One tab per class with Queenie Chow · Each lesson: vocabulary, dialogues, cultural context, extras (rolling word bank), practice · Practice progress resets on reload · Next lesson: TBC by 短信 — Ju-Yang in Geneva until Friday; Thursday 23 July held tentatively.
   </footer>
 
 </main>
@@ -2800,6 +3020,32 @@ document.getElementById('lad4-pil').onclick=()=>ladder4Pick('pil');
 document.getElementById('ladder-say-l4').onclick=()=>{speak(document.getElementById('ladder-zh-l4').textContent,null);};
 document.querySelectorAll('.lstep4').forEach(b=>b.onclick=()=>ladder4Show(+b.dataset.step));
 ladder4Show(0);
+
+
+/* ================= LESSON 5 PILLAR SIMULATOR ================= */
+(function(){
+  const pillars=[...document.querySelectorAll('#pillars-row-l5 .pillar')];
+  let revealed=0;
+  const status=document.getElementById('sim-status-l5');
+  function upd(){
+    status.textContent=revealed===0?'\u70b9\u51fb\u56fe\u8868\u5f00\u59cb \u00b7 click the chart to begin':
+      revealed<5?('\u5df2\u663e\u793a '+revealed+' / 5 \u2014 \u8bf4\u5b8c\u8fd9\u4e00\u6839\uff0c\u518d\u70b9\u4e0b\u4e00\u6839'):
+      '\u4e94\u5927\u652f\u67f1 \u8bb2\u5b8c\u4e86 \u2014 all five standing.';
+  }
+  function reveal(n){
+    pillars.forEach((p,i)=>p.classList.toggle('revealed',i<n));
+    revealed=n;upd();
+  }
+  document.getElementById('pillars-row-l5').addEventListener('click',e=>{
+    const pill=e.target.closest('.pillar');
+    if(pill&&pill.classList.contains('revealed')){pill.classList.toggle('speaking');return;}
+    if(revealed<5)reveal(revealed+1);
+  });
+  document.getElementById('sim-next-l5').onclick=()=>{if(revealed<5)reveal(revealed+1);};
+  document.getElementById('sim-all-l5').onclick=()=>reveal(5);
+  document.getElementById('sim-reset-l5').onclick=()=>{pillars.forEach(p=>p.classList.remove('speaking'));reveal(0);};
+  upd();
+})();
 
 </script>
 
